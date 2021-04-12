@@ -49,6 +49,7 @@ To get started, click [click here](https://trello.com/b/LIRIWtwm/interior-caf%C3
 - [ ] Create a search bar
 - [ ] Allow users to follow each other 
 - [ ] If users follow each other, they can message each other
+- [ ] About page for current user to talk about their achivements
 
 
 ### ***Credits***

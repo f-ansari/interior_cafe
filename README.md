@@ -32,7 +32,7 @@ Interior Café is a full-stack PERN application that allows interior designers t
 
 ### ***Getting Started***
 
-To get started, click [click here]() and visit my trello board to follow the development of this site.
+To get started, click [click here](https://trello.com/b/LIRIWtwm/interior-caf%C3%A9) and visit my trello board to follow the development of this site.
 
 ***
 

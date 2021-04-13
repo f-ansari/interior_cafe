@@ -10,7 +10,7 @@ class User(db.Model):
     first_name = db.Column(db.String(30), nullable=False)
     last_name = db.Column(db.String(30), nullable=False)
     username = db.Column(db.String(30), nullable=False, unique=True)
-    user_email = db.Column(db.String(100), nullable=False, unique=True)
+    email = db.Column(db.String(100), default='', nullable=False, unique=True)
     password_digest = db.Column(db.String(255), nullable=False)
     created_at = db.Column(
         db.DateTime, default=datetime.utcnow, nullable=False)
@@ -21,11 +21,11 @@ class User(db.Model):
     comments = db.relationship(
         "Comment", cascade='all', backref=db.backref('user_comments', lazy=True))
 
-    def __init__(self, first_name, last_name, username, user_email, password_digest):
+    def __init__(self, first_name, last_name, username, password_digest, email=''):
         self.first_name = first_name,
         self.last_name = last_name,
         self.username = username,
-        self.user_email = user_email,
+        self.email = email,
         self.password_digest = password_digest
 
     def json(self):
@@ -34,7 +34,7 @@ class User(db.Model):
             "first_name": self.first_name,
             "last_name": self.last_name,
             "username": self.username,
-            "user_email": self.user_email,  # need to remove later
+            "email": self.email,  # need to remove later
             "password_digest": self.password_digest,
             "created_at": str(self.created_at),
             "updated_at": str(self.updated_at)

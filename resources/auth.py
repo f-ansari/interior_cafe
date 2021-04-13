@@ -33,7 +33,7 @@ class Register(Resource):
             "first_name": data['first_name'],
             "last_name": data['last_name'],
             "username": data['username'],
-            "user_email": data['user_email'],
+            "email": data['email'],
             "password_digest": gen_password(data['password'])
         }
         user = User(**params)

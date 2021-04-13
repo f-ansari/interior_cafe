@@ -1,4 +1,4 @@
-import { FIRST_NAME, LAST_NAME, USERNAME, USER_EMAIL, PASSWORD } from '../type'
+import { FIRST_NAME, LAST_NAME, USERNAME, USER_EMAIL, PASSWORD } from '../types'
 
 const iState = {
   firstName: '',

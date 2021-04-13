@@ -7,3 +7,6 @@ export const LAST_NAME = 'LAST_NAME'
 export const USERNAME = 'USERNAME'
 export const USER_EMAIL = 'USER_EMAIL'
 export const PASSWORD = 'PASSWORD'
+
+// user section
+export const USER_DETAILS = 'USER_DETAILS'

@@ -46,6 +46,11 @@ class User(db.Model):
         return self
 
     @classmethod
+    def find_all(cls):
+        users = User.query.all()
+        return [user.json() for user in users]
+
+    @classmethod
     def find_one(cls, username):
         user = User.query.filter_by(username=username).first()
         return user

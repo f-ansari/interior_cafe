@@ -9,7 +9,7 @@ from models.post import Post
 from models.image import Image
 from models.comment import Comment
 from resources.auth import Login, Register
-# from resources.user import User
+from resources.user import Users
 
 app = Flask(__name__)
 api = Api(app)
@@ -25,7 +25,7 @@ migrate = Migrate(app, db)
 api.add_resource(Login, '/auth/login')
 api.add_resource(Register, '/auth/register')
 
-# api.add_resource(User, '/users')
+api.add_resource(Users, '/users')
 
 if __name__ == '__main__':
     app.run(debug=True)

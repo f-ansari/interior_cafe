@@ -18,3 +18,8 @@ class Comment(db.Model):
         "User", backref=db.backref('comments_user', lazy=True))
     post = db.relationship(
         "Post", backref=db.backref('comment_post', lazy=True))
+
+    def __init__(self, user_id, post_id, comment):
+        self.user_id = user_id,
+        self.post_id = post_id,
+        self.comment = comment

@@ -8,7 +8,7 @@ from models.user import User
 from models.post import Post
 from models.image import Image
 from models.comment import Comment
-# from resources import
+from resources.auth import Login, Register
 
 app = Flask(__name__)
 api = Api(app)
@@ -21,7 +21,8 @@ app.config['SQLALCHEMY_ECHO'] = True
 db.init_app(app)
 migrate = Migrate(app, db)
 
-# api.add_resource()
+api.add_resource(Login, '/auth/login')
+api.add_resource(Register, '/auth/register')
 
 if __name__ == '__main__':
     app.run(debug=True)

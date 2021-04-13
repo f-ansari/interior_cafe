@@ -27,3 +27,20 @@ class User(db.Model):
         self.username = username,
         self.email = email,
         self.password_digest = password_digest
+
+    def json(self):
+        return {
+            "id": self.id,
+            "first_name": self.first_name,
+            "last_name": self.last_name,
+            "username": self.username,
+            "email": self.email,  # need to remove later
+            "password_digest": self.password_digest
+            "created_at": str(self.created_at),
+            "updated_at": str(self.updated_at)
+        }
+
+    def create(self):
+        db.session.add(self)
+        db.session.commit()
+        return self

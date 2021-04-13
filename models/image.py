@@ -19,3 +19,17 @@ class Image(db.Model):
     def __init__(self, post_id, image):
         self.post_id = post_id,
         self.image = image
+
+    def json(self):
+        return {
+            "id": self.id,
+            "post_id": self.post_id,
+            "image": self.image,
+            "created_at": str(self.created_at),
+            "updated_at": str(self.updated_at)
+        }
+
+    def create(self):
+        db.session.add(self)
+        db.session.commit()
+        return self

@@ -21,8 +21,8 @@ class Post(db.Model):
     comments = db.relationship(
         "Comment", cascade='all', backref=db.backref('post_comments', lazy=True))
 
-    def __init__(self, post_id, title, description, like):
-        self.post_id = post_id,
+    def __init__(self, user_id, title, description, like):
+        self.user_id = user_id
         self.title = title,
         self.description = description,
         self.like = like
@@ -42,3 +42,8 @@ class Post(db.Model):
         db.session.add(self)
         db.session.commit()
         return self
+
+    @classmethod
+    def find_all(cls):
+        posts = Post.query.all()
+        return [post.json() for post in posts]

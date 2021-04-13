@@ -1,10 +1,10 @@
-import { FIRST_NAME, LAST_NAME, USERNAME, USER_EMAIL, PASSWORD } from '../types'
+import { FIRST_NAME, LAST_NAME, USERNAME, EMAIL, PASSWORD } from '../types'
 
 const iState = {
   firstName: '',
   lastName: '',
   username: '',
-  user_email: '',
+  email: '',
   password: ''
 }
 
@@ -16,8 +16,8 @@ const AuthReducer = (state = iState, action) => {
       return { ...state, lastName: action.payload }
     case USERNAME:
       return { ...state, username: action.payload }
-    case USER_EMAIL:
-      return { ...state, user_email: action.payload }
+    case EMAIL:
+      return { ...state, email: action.payload }
     case PASSWORD:
       return { ...state, password: action.payload }
     default:

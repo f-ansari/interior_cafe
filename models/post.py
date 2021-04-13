@@ -7,13 +7,13 @@ class Post(db.Model):
     __tablename__ = 'posts'
 
     id = db.Column(db.Integer, primary_key=True)
-    post_id = db.Column(db.Integer, db.ForeignKey(users.id), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     title = db.Column(db.String(255), nullable=False)
     description = db.Column(db.String(500), nullable=False)
     like = db.Column(db.Integer, nullable=False)
     created_at = db.Column(
         db.DateTime, default=datetime.utcnow, nullable=False)
-    updated_at = db.Column(db.DateTime, default=date.utcnow,
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow,
                            nullable=False, onupdate=datetime.now())
     user = db.relationship("User", backref=db.backref('posts_user', lazy=True))
     images = db.relationship("Image", cascade='all',

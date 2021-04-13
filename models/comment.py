@@ -14,7 +14,7 @@ class Comment(db.Model):
         db.DateTime, default=datetime.utcnow, nullable=False)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow,
                            nullable=False, onupdate=datetime.now())
-    user = sb.relationship(
+    user = db.relationship(
         "User", backref=db.backref('comments_user', lazy=True))
     post = db.relationship(
         "Post", backref=db.backref('comment_post', lazy=True))

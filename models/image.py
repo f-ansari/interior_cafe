@@ -11,9 +11,10 @@ class Image(db.Model):
     image = db.Column(db.String(255), nullable=False)
     created_at = db.Column(
         db.DateTime, default=datetime.utcnow, nullable=False)
-    updated_at = db.Column(db.DateTime, default=datetime.utcnow() nullable=False, onupdate=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow(
+    ), nullable=False, onupdate=datetime.utcnow)
     post = db.relationship(
-        "Post", backref=db.backref('images_post', lazy-True))
+        "Post", backref=db.backref('images_post', lazy=True))
 
     def __init__(self, post_id, image):
         self.post_id = post_id,

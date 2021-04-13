@@ -14,3 +14,6 @@ class Post(db.Model):
         db.DateTime, default=datetime.utcnow, nullable=False)
     updated_at = db.Column(db.DateTime, default=date.utcnow,
                            nullable=False, onupdate=datetime.now())
+    user = db.relationship("User", backref=db.backref('posts_user', lazy=True))
+    comments = db.relationship(
+        "Comment", cascade='all', backref=db.backref('post_comments', lazy=True))

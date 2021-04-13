@@ -26,4 +26,4 @@ class User(db.Model):
     self.last_name = last_name
     self.username = username
     self.email = email
-    self, password_digest = password_digest
+    self.password_digest = password_digest

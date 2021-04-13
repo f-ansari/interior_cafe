@@ -24,5 +24,5 @@ class Post(db.Model):
     def __init__(self, post_id, title, description, like):
         self.post_id = post_id,
         self.title = title,
-        self.description = description
+        self.description = description,
         self.like = like

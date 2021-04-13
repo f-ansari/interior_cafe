@@ -47,3 +47,7 @@ class Post(db.Model):
     def find_all(cls):
         posts = Post.query.all()
         return [post.json() for post in posts]
+
+    @classmethod
+    def find_by_id(cls, post_id):
+        return Post.query.filter_by(id=post_id).first()

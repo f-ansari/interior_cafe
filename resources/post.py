@@ -13,3 +13,17 @@ class Posts(Resource):
     def get(self):
         post = Post.find_all()
         return post
+
+
+class PostDetails(Resource):
+    def get(self, post_id):
+        data = Post.find_by_id(post_id)
+        return data.json()
+
+    def put(self, post_id):
+        post = Post.find_by_id(post_id)
+        data = request.get_json()
+        for key in data:
+            setattr(post, key, data[key])
+        db.session.commit()
+        return post.json()

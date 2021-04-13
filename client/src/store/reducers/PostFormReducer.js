@@ -1,4 +1,4 @@
-import { USER_ID, TITLE, DESCRIPTION, LIKE } from '../types'
+import { USER_ID, TITLE, DESCRIPTION, LIKE, IMAGES } from '../types'
 
 const iState = {
   userId: '',
@@ -7,7 +7,7 @@ const iState = {
   like: ''
 }
 
-const PostReducer = (state = iState, action) => {
+const PostFormReducer = (state = iState, action) => {
   switch (action.type) {
     case USER_ID:
       return { ...state, userId: action.payload }
@@ -22,4 +22,4 @@ const PostReducer = (state = iState, action) => {
   }
 }
 
-export default PostReducer
+export default PostFormReducer

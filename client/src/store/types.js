@@ -15,4 +15,5 @@ export const USER_DETAILS = 'USER_DETAILS'
 //post section
 export const TITLE = 'TITLE'
 export const DESCRIPTION = 'DESCRIPTION'
+export const IMAGES = 'IMAGES'
 export const LIKE = 'LIKE'

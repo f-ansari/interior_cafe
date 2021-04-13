@@ -9,7 +9,7 @@ from models.post import Post
 from models.image import Image
 from models.comment import Comment
 from resources.auth import Login, Register
-from resources.user import Users
+from resources.user import Users, UserPosts
 from resources.post import Posts
 from resources.image import Images
 from resources.comment import Comments
@@ -29,6 +29,7 @@ api.add_resource(Login, '/auth/login')
 api.add_resource(Register, '/auth/register')
 
 api.add_resource(Users, '/users')
+api.add_resource(UserPosts, '/user/posts/<int:user_id>')
 
 api.add_resource(Posts, '/posts')
 

@@ -8,3 +8,9 @@ class Users(Resource):
     def get(self):
         users = User.find_all()
         return users
+
+
+class UserPosts(Resource):
+    def get(self, user_id):
+        user = User.include_posts_comments(user_id)
+        return user

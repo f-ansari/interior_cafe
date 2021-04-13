@@ -54,3 +54,20 @@ class User(db.Model):
     def find_one(cls, username):
         user = User.query.filter_by(username=username).first()
         return user
+
+    @classmethod
+    def include_posts_comments(cls, user_id):
+        user = User.query.options(joinedload(
+            'posts_user'), joinedload('comments_user')).filter_by(id=user_id).first()
+        posts = [post.json() for post in user.posts]
+        comments = [comment.json() for comment in user.comments]
+        return {**user.json(), "posts": posts, "comments": comments}
+
+
+# andrews example from memestagram
+    # @classmethod
+    # def include_comments(cls, post_id):
+    #     post = Post.query.options(joinedload(
+    #         'comments')).filter_by(id=post_id).first()
+    #     comments = [comment.json() for comment in post.comments]
+    #     return {**post.json(), "comments": comments}

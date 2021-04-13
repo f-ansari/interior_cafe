@@ -44,3 +44,8 @@ class User(db.Model):
         db.session.add(self)
         db.session.commit()
         return self
+
+    @classmethod
+    def find_one(cls, username):
+        user = User.query.filter_by(username=username).first()
+        return user

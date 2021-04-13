@@ -17,6 +17,14 @@ class Login(Resource):
             return {"token": token, "payload": payload}
         return {"msg": "Unauthorized"}, 401
 
+    # this makes it a protected route
+    def get(self):
+        token = strip_token(request)
+        if token:
+            payload = read_token(token)
+            return payload
+        return 'Unauthorized', 401
+
 
 class Register(Resource):
     def post(self):

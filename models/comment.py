@@ -12,3 +12,5 @@ class Comment(db.Model):
         db.DateTime, default=datetime.utcnow, nullable=False)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow,
                            nullable=False, onupdate=datetime.now())
+    post = db.relationship(
+        "Post", backref=db.backref('comment_post', lazy=True))

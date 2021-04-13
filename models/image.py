@@ -33,3 +33,9 @@ class Image(db.Model):
         db.session.add(self)
         db.session.commit()
         return self
+
+    # here for testing purposes
+    @classmethod
+    def find_all(cls):
+        images = Image.query.all()
+        return [image.json() for image in images]

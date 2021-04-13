@@ -11,6 +11,7 @@ from models.comment import Comment
 from resources.auth import Login, Register
 from resources.user import Users
 from resources.post import Posts
+from resources.image import Images
 
 app = Flask(__name__)
 api = Api(app)
@@ -29,6 +30,8 @@ api.add_resource(Register, '/auth/register')
 api.add_resource(Users, '/users')
 
 api.add_resource(Posts, '/posts')
+
+api.add_resource(Images, '/images')
 
 if __name__ == '__main__':
     app.run(debug=True)

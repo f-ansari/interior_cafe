@@ -4,7 +4,7 @@ from flask_cors import CORS
 from flask_restful import Api
 from flask_migrate import Migrate
 from sqlalchemy.orm import joinedload
-# from models import
+# from models import user, post, image, comment
 # from resources import
 
 app = Flask(__name__)

@@ -14,3 +14,7 @@ class Image(db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.utcnow() nullable=False, onupdate=datetime.utcnow)
     post = db.relationship(
         "Post", backref=db.backref('images_post', lazy-True))
+
+    def __init__(self, post_id, image):
+        self.post_id = post_id,
+        self.image = image

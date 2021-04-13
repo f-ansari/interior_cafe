@@ -20,3 +20,10 @@ class User(db.Model):
                             backref=db.backref('user_posts', lazy=True))
     comments = db.relationship(
         "Comment", cascade='all', backref=db.backref('user_comments', lazy=True))
+
+    def __init__(self, first_name, last_name, username, email, password_digest)
+    self.first_name = first_name
+    self.last_name = last_name
+    self.username = username
+    self.email = email
+    self, password_digest = password_digest

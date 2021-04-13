@@ -20,3 +20,9 @@ class Post(db.Model):
                              backref=db.backref('post_images'), lazy=True)
     comments = db.relationship(
         "Comment", cascade='all', backref=db.backref('post_comments', lazy=True))
+
+    def __init__(self, post_id, title, description, like):
+        self.post_id = post_id,
+        self.title = title,
+        self.description = description
+        self.like = like

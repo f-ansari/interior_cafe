@@ -5,13 +5,17 @@ from middleware import create_token, gen_password, strip_token, read_token, comp
 
 
 class Login(Resource):
-    def post(self, email):
+    def post(self):
         data = request.get_json()
         user = User.find_one(data['username'])
-        print(user)
-
-    def get(self):
-        pass
+        if user and compare_password(data['password'], user.password_digest):
+            payload = {
+                'id': user.id,
+                'username': user.username
+            }
+            token = create_token(payload)
+            return {"token": token, "payload": payload}
+        return {"msg": "Unauthorized"}, 401
 
 
 class Register(Resource):
@@ -21,7 +25,7 @@ class Register(Resource):
             "first_name": data['first_name'],
             "last_name": data['last_name'],
             "username": data['username'],
-            "email": data['email'],
+            "user_email": data['user_email'],
             "password_digest": gen_password(data['password'])
         }
         user = User(**params)

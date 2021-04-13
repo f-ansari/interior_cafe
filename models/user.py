@@ -14,4 +14,5 @@ class User(db.Model):
     password_digest = db.Column(db.String(255), nullable=False)
     created_at = db.Column(
         db.DateTime, default=datetime.utcnow, nullable=False)
-    updated_at = db.Column(db.DateTime default=datetime.utcnow, nullable=False, onupdate=datetime.now())
+    updated_at = db.Column(db.DateTime, default=datetime.utcnow,
+                           nullable=False, onupdate=datetime.now())

@@ -7,7 +7,7 @@ class Post(db.Model):
     __tablename__ = 'posts'
 
     id = db.Column(db.Integer, primary_key=True)
-    post_id = db.Column(db.Integer, db.ForeignKey(users.id), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey(users.id), nullable=False)
     title = db.Column(db.String(255), nullable=False)
     description = db.Column(db.String(500), nullable=False)
     like = db.Column(db.Integer, nullable=False)

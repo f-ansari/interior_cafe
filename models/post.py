@@ -26,3 +26,19 @@ class Post(db.Model):
         self.title = title,
         self.description = description,
         self.like = like
+
+    def json(self):
+        return {
+            "id": self.id,
+            "user_id": self.user_id,
+            "title": self.title,
+            "description": self. description,
+            "like": self.like,
+            "created_at": str(self.created_at),
+            "updated_at": str(self.updated_at)
+        }
+
+    def create(self):
+        db.session.add(self)
+        db.session.commit()
+        return self

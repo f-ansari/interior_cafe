@@ -23,3 +23,18 @@ class Comment(db.Model):
         self.user_id = user_id,
         self.post_id = post_id,
         self.comment = comment
+
+    def json(self):
+        return {
+            "id": self.id,
+            "user_id": self.user_id,
+            "post_id": self.post_id,
+            "comment": self.comment,
+            "created_at": str(self.created_at),
+            "updated_at": str(self.updated_at)
+        }
+
+    def create(self):
+        db.session.add(self)
+        db.session.commit()
+        return self

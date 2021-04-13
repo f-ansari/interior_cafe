@@ -1,10 +1,10 @@
 from flask import Flask
-# from models.db import db
+from models.db import db
 from flask_cors import CORS
 from flask_restful import Api
 from flask_migrate import Migrate
 from sqlalchemy.orm import joinedload
-# from models import user, post, image, comment
+from models import user, post, image, comment
 # from resources import
 
 app = Flask(__name__)
@@ -15,8 +15,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost:5432/interior_cafe_db'
 app.config['SQLALCHEMY_ECHO'] = True
 
-# db.init_app(app)
-# migrate = Migrate(app, db)
+db.init_app(app)
+migrate = Migrate(app, db)
 
 # api.add_resource()
 

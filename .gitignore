@@ -1,3 +1,4 @@
 # add unesseary comment
 __pycache__
 venv
+.env

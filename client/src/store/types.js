@@ -13,6 +13,9 @@ export const PASSWORD = 'PASSWORD'
 export const USER_DETAILS = 'USER_DETAILS'
 
 //post section
+export const GET_POST = 'GET_POST'
+
+//post form section
 export const TITLE = 'TITLE'
 export const DESCRIPTION = 'DESCRIPTION'
 export const UPLOAD_IMAGES = 'UPLOAD_IMAGES'

@@ -1,4 +1,4 @@
-import { USER_ID, TITLE, DESCRIPTION, LIKE, IMAGES } from '../types'
+import { USER_ID, TITLE, DESCRIPTION, LIKE } from '../types'
 
 const iState = {
   userId: '',

@@ -16,9 +16,13 @@ class Posts(Resource):
 
 
 class PostDetails(Resource):
+    # def get(self, post_id):
+    #     data = Post.find_by_id(post_id)
+    #     return data.json()
+
     def get(self, post_id):
-        data = Post.find_by_id(post_id)
-        return data.json()
+        post = Post.include_images(post_id)
+        return post
 
     def put(self, post_id):
         post = Post.find_by_id(post_id)

@@ -51,3 +51,10 @@ class Post(db.Model):
     @classmethod
     def find_by_id(cls, post_id):
         return Post.query.filter_by(id=post_id).first()
+
+    @classmethod
+    def include_images(cls, post_id):
+        post = Post.query.options(joinedload(
+            'images_post')).filter_by(id=post_id).first()
+        images = [post.json() for image in post.images]
+        return {**post.json(), "images": images}

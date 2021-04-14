@@ -12,5 +12,5 @@ class Users(Resource):
 
 class UserPosts(Resource):
     def get(self, user_id):
-        user = User.include_posts_comments(user_id)
+        user = User.include_posts_comments_images(user_id)
         return user

@@ -1,7 +1,7 @@
 import { USER_DETAILS } from '../types'
 
 const iState = {
-  userDetails: [] // incoming user with their post and comments
+  userDetails: [] // incoming user with their post and comments and images
 }
 
 const UserReducer = (state = iState, action) => {

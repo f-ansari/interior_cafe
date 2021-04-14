@@ -20,6 +20,8 @@ class User(db.Model):
                             backref=db.backref('user_posts', lazy=True))
     comments = db.relationship(
         "Comment", cascade='all', backref=db.backref('user_comments', lazy=True))
+    images = db.relationship("Image", cascade='all',
+                             backref=db.backref('user_images', lazy=True))
 
     def __init__(self, first_name, last_name, username, password_digest, email=''):
         self.first_name = first_name,
@@ -56,9 +58,10 @@ class User(db.Model):
         return user
 
     @classmethod
-    def include_posts_comments(cls, user_id):
+    def include_posts_comments_images(cls, user_id):
         user = User.query.options(joinedload(
-            'posts_user'), joinedload('comments_user')).filter_by(id=user_id).first()
+            'posts_user'), joinedload('images_user'), joinedload('comments_user')).filter_by(id=user_id).first()
         posts = [post.json() for post in user.posts]
+        images = [image.json() for image in user.images]
         comments = [comment.json() for comment in user.comments]
-        return {**user.json(), "posts": posts, "comments": comments}
+        return {**user.json(), "posts": posts, "images": images, "comments": comments}

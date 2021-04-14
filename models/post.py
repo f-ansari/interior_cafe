@@ -43,10 +43,20 @@ class Post(db.Model):
         db.session.commit()
         return self
 
+    # @classmethod
+    # def find_all(cls):
+    #     posts = Post.query.all()
+    #     return [post.json() for post in posts]
+
     @classmethod
     def find_all(cls):
-        posts = Post.query.all()
-        return [post.json() for post in posts]
+        posts = Post.query.options(joinedload(
+            'images_post')).all()
+        array = []
+        for post in posts:
+            array.append({**post.json(), "images": [image.json()
+                                                    for image in post.images if post.images]})
+        return array
 
     @classmethod
     def find_by_id(cls, post_id):
@@ -56,5 +66,5 @@ class Post(db.Model):
     def include_images(cls, post_id):
         post = Post.query.options(joinedload(
             'images_post')).filter_by(id=post_id).first()
-        images = [post.json() for image in post.images]
+        images = [image.json() for image in post.images]
         return {**post.json(), "images": images}

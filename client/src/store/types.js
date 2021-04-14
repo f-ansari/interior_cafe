@@ -20,3 +20,6 @@ export const TITLE = 'TITLE'
 export const DESCRIPTION = 'DESCRIPTION'
 export const UPLOAD_IMAGES = 'UPLOAD_IMAGES'
 export const LIKE = 'LIKE'
+
+//image secton
+export const GET_IMAGE = 'GET_IMAGE'

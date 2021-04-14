@@ -1,6 +1,5 @@
 // global types
 export const ADD_TO_FRONTEND = 'ADD_TO_BACKEND'
-export const USER_ID = 'USER_ID'
 
 // login section
 export const FIRST_NAME = 'FIRST_NAME'
@@ -10,7 +9,8 @@ export const EMAIL = 'EMAIL'
 export const PASSWORD = 'PASSWORD'
 
 // user section
-export const USER_DETAILS = 'USER_DETAILS'
+export const USER_ID = 'USER_ID'
+export const GET_USER_POSTS = 'GET_USER_POSTS'
 
 //post section
 export const GET_POST = 'GET_POST'

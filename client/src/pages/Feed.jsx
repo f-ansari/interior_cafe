@@ -4,7 +4,7 @@ import { GetAllPost } from '../store/actions/PostActions'
 import PostCard from '../components/posts/PostCard'
 
 const state = ({ postState }) => {
-    return postState
+    return { postState }
 }
 
 const action = (dispatch) => {
@@ -22,7 +22,7 @@ const Feed = (props) => {
         <div>
             <h1>I am Feed</h1>
             <PostCard
-                mapPosts={props.mapPosts.data}
+                mapPosts={props.postState.mapPosts.data}
             />
         </div>
     )

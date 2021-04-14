@@ -1,6 +1,7 @@
 import React from 'react'
 
 const PostCard = (props) => {
+    console.log(props)
     return (
         <div>
             <h3>I am post cards</h3>
@@ -8,14 +9,11 @@ const PostCard = (props) => {
                 {props.mapPosts ? (
                     props.mapPosts.map((post, i) => (
                         <div key={i}>
-                            {post.images.map((image, i)=>(
-                                <div key={i}>
-                                    <img width="300px" src={image.image} alt="users post"/>
-                                </div>
-                            ))}
+                        <h3>{post.title}</h3>
+                        <img src={post.images[0].image} alt="users post"/>
                         </div>
                     ))
-                ): <h3>I am Loading!</h3> }
+                ): <div>I am Loading!</div> }
             </div>
         </div>
     )

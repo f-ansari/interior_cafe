@@ -1,1 +1,22 @@
+.bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: blanchedalmond;
+  padding: 20px;
+}
 
+nav a {
+  color: black;
+}
+.bar-1 {
+  color: black;
+  margin: 0 2em 0 0;
+}
+.bar-2 {
+  margin: 0 2em 0 0;
+}
+
+img {
+  width: 30em;
+}

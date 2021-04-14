@@ -32,7 +32,7 @@ api.add_resource(Users, '/users')
 api.add_resource(UserPosts, '/user/posts/<int:user_id>')
 
 api.add_resource(Posts, '/posts')
-api.add_resource(PostDetails, '/posts/<int:post_id>')
+api.add_resource(PostDetails, '/posts/<int:user_id>')
 
 api.add_resource(Images, '/images')
 

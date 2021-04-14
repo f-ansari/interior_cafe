@@ -20,8 +20,8 @@ class PostDetails(Resource):
     #     data = Post.find_by_id(post_id)
     #     return data.json()
 
-    def get(self, post_id):
-        post = Post.include_images(post_id)
+    def get(self, user_id):
+        post = Post.user_post_images(user_id)
         return post
 
     def put(self, post_id):

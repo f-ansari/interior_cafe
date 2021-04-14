@@ -11,6 +11,9 @@ export const PASSWORD = 'PASSWORD'
 // user section
 export const USER_ID = 'USER_ID'
 export const GET_USER_POSTS = 'GET_USER_POSTS'
+export const USER_F_NAME = 'USER_F_NAME'
+export const USER_L_NAME = 'USER_L_NAME'
+export const CURR_USERNAME = 'CURR_USERNAME'
 
 //post section
 export const GET_POST = 'GET_POST'

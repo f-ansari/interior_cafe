@@ -1,8 +1,8 @@
 import {
   USER_ID,
-  FIRST_NAME,
-  LAST_NAME,
-  USERNAME,
+  USER_F_NAME,
+  USER_L_NAME,
+  CURR_USERNAME,
   GET_USER_POSTS
 } from '../types'
 
@@ -17,13 +17,13 @@ const iState = {
 const UserReducer = (state = iState, action) => {
   switch (action.type) {
     case USER_ID:
-      return { ...state, userDetails: action.payload }
-    case FIRST_NAME:
-      return { ...state, userDetails: action.payload }
-    case LAST_NAME:
-      return { ...state, userDetails: action.payload }
-    case USERNAME:
-      return { ...state, userDetails: action.payload }
+      return { ...state, userId: action.payload }
+    case USER_F_NAME:
+      return { ...state, firstName: action.payload }
+    case USER_L_NAME:
+      return { ...state, lastName: action.payload }
+    case CURR_USERNAME:
+      return { ...state, username: action.payload }
     case GET_USER_POSTS:
       return { ...state, userPosts: action.payload }
     default:

@@ -3,7 +3,8 @@ import {
   USER_F_NAME,
   USER_L_NAME,
   CURR_USERNAME,
-  GET_USER_POSTS
+  GET_USER_POSTS,
+  DESTROY_POST
 } from '../types'
 
 const iState = {
@@ -26,6 +27,12 @@ const UserReducer = (state = iState, action) => {
       return { ...state, username: action.payload }
     case GET_USER_POSTS:
       return { ...state, userPosts: action.payload }
+    case DESTROY_POST:
+      console.log(action.payload)
+      const userPosts = state.userPosts.filter(
+        (destroyPost, i) => destroyPost.id !== action.payload.data.payload
+      )
+      return { ...state, userPosts }
     default:
       return { ...state }
   }

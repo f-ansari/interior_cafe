@@ -1,5 +1,9 @@
-import { __GetAllPost, __GetOnePost } from '../../services/PostService'
-import { GET_POST, GET_ONE_POST } from '../types'
+import {
+  __GetAllPost,
+  __GetOnePost,
+  __DeletePost
+} from '../../services/PostService'
+import { GET_POST, GET_ONE_POST, DESTROY_POST } from '../types'
 
 export const GetAllPost = () => async (dispatch) => {
   try {
@@ -19,6 +23,19 @@ export const GetOnePost = (post_id) => async (dispatch) => {
     dispatch({
       type: GET_ONE_POST,
       payload: post
+    })
+  } catch (error) {
+    throw error
+  }
+}
+
+export const DeletePost = (post_id) => async (dispatch) => {
+  try {
+    const destroy = await __DeletePost(post_id)
+    console.log(destroy)
+    dispatch({
+      type: DESTROY_POST,
+      payload: destroy
     })
   } catch (error) {
     throw error

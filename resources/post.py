@@ -29,14 +29,14 @@ class PostDetails(Resource):
         db.session.commit()
         return post.json()
 
-    def delete(self, post_id):
-        post = Post.find_by_id(post_id)
-        db.session.delete(post)
-        db.session.commit()
-        return {'msg': 'Post deleted', 'payload': post.id}
-
 
 class PostOne(Resource):
     def get(self, post_id):
         post = Post.include_images(post_id)
         return post
+
+    def delete(self, post_id):
+        post = Post.find_by_id(post_id)
+        db.session.delete(post)
+        db.session.commit()
+        return {'msg': 'Post deleted', 'payload': post.id}

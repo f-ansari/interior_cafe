@@ -24,6 +24,7 @@ export const TITLE = 'TITLE'
 export const DESCRIPTION = 'DESCRIPTION'
 export const UPLOAD_IMAGES = 'UPLOAD_IMAGES'
 export const LIKE = 'LIKE'
+export const DESTROY_POST = 'DESTROY_POST'
 
 //image secton
 export const GET_IMAGE = 'GET_IMAGE'

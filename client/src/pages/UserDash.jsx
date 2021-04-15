@@ -18,7 +18,7 @@ const UserDash = (props) => {
     useEffect(() => {
         props.fetchUserPost(userId)
     }, [])
-    // console.log(props)
+    console.log(props)
     
     return (
         <div>

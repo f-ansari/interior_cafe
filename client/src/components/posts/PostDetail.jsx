@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { GetOnePost } from '../../store/actions/PostActions'
+import { GetOnePost, DeletePost } from '../../store/actions/PostActions'
 
 const state = ({ postState }) => {
     return {postState}
@@ -8,7 +8,8 @@ const state = ({ postState }) => {
 
 const action = (dispatch) => {
     return {
-        fetchOnePost: (postId) => dispatch(GetOnePost(postId))
+        fetchOnePost: (postId) => dispatch(GetOnePost(postId)),
+        destroyPost: (postId) => dispatch(DeletePost(postId))
     }
 }
 const PostDetail = (props) => {
@@ -23,13 +24,18 @@ const convertDate = (date) => {
     return event.toDateString()
   }
 
-console.log(props)
+  const handleSubmit = (e) => {
+    props.destroyPost(props.match.params.post_id)
+    props.history.push(`/userdash`) 
+  }
+
 const { onePost } = props.postState
 
     return (
         <div>
             <h1>Post Detail section</h1>
             <button onClick={() => props.history.push(`/userdash`)}>Go Back to Dash</button>
+            <button onClick={(e) => handleSubmit(e)}>Delete this post</button>
             <h2>{onePost.title}</h2>
             <h3>{convertDate(onePost.created_at)}</h3>
             <p>{onePost.description}</p>

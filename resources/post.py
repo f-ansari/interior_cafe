@@ -16,9 +16,6 @@ class Posts(Resource):
 
 
 class PostDetails(Resource):
-    # def get(self, post_id):
-    #     data = Post.find_by_id(post_id)
-    #     return data.json()
 
     def get(self, user_id):
         post = Post.user_post_images(user_id)
@@ -37,3 +34,9 @@ class PostDetails(Resource):
         db.session.delete(post)
         db.session.commit()
         return {'msg': 'Post deleted', 'payload': post.id}
+
+
+class PostOne(Resource):
+    def get(self, post_id):
+        post = Post.include_images(post_id)
+        return post

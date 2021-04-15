@@ -10,7 +10,7 @@ from models.image import Image
 from models.comment import Comment
 from resources.auth import Login, Register
 from resources.user import Users, UserPosts
-from resources.post import Posts, PostDetails
+from resources.post import Posts, PostDetails, PostOne
 from resources.image import Images
 from resources.comment import Comments
 
@@ -33,6 +33,7 @@ api.add_resource(UserPosts, '/user/posts/<int:user_id>')
 
 api.add_resource(Posts, '/posts')
 api.add_resource(PostDetails, '/posts/<int:user_id>')
+api.add_resource(PostOne, '/user/post/<int:post_id>')
 
 api.add_resource(Images, '/images')
 

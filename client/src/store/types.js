@@ -17,6 +17,7 @@ export const CURR_USERNAME = 'CURR_USERNAME'
 
 //post section
 export const GET_POST = 'GET_POST'
+export const GET_ONE_POST = 'GET_ONE_POST'
 
 //post form section
 export const TITLE = 'TITLE'

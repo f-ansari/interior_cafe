@@ -1,7 +1,6 @@
 import React from 'react'
 
 const PostCard = (props) => {
-    console.log(props)
     return (
         <div>
             <h3>I am post cards</h3>

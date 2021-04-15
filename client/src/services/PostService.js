@@ -17,3 +17,12 @@ export const __GetOneUserPosts = async (user_id) => {
     throw error
   }
 }
+
+export const __GetOnePost = async (post_id) => {
+  try {
+    const res = await Client.get(`/user/post/${post_id}`)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}

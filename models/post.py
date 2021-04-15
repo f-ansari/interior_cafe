@@ -62,13 +62,6 @@ class Post(db.Model):
     def find_by_id(cls, post_id):
         return Post.query.filter_by(id=post_id).first()
 
-    # @classmethod
-    # def include_images(cls, post_id):
-    #     post = Post.query.options(joinedload(
-    #         'images_post')).filter_by(id=post_id).first()
-    #     images = [image.json() for image in post.images]
-    #     return {**post.json(), "images": images}
-
     @classmethod
     def user_post_images(cls, user_id):
         posts = Post.query.options(joinedload(
@@ -78,3 +71,10 @@ class Post(db.Model):
             array.append({**post.json(), "images": [image.json()
                                                     for image in post.images if post.images]})
         return array
+
+    @classmethod
+    def include_images(cls, post_id):
+        post = Post.query.options(joinedload(
+            'images_post')).filter_by(id=post_id).first()
+        images = [image.json() for image in post.images]
+        return {**post.json(), "images": images}

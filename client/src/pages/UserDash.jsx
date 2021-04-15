@@ -18,20 +18,19 @@ const UserDash = (props) => {
     useEffect(() => {
         props.fetchUserPost(userId)
     }, [])
-    console.log(props)
+    // console.log(props)
     
     return (
         <div>
             <h1>User Dash</h1>
             {props.userState ?
             <div>
-                <h2>{props.userState.firstName}</h2>
+                <h2>Hello {props.userState.firstName} {props.userState.lastName}</h2>
                 <UserPosts
+                {...props}
                 userPosts={props.userState.userPosts}
                 />
             </div> : null}
-            {/* <h2>Hello {props.firstName} {props.lastName}!</h2>
-            {props.userPosts ?  : null} */}
         </div>
     )
 }

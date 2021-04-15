@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 const UserPost = (props) => {
-    // console.log(props.userPosts[0].images[0].image)
-    console.log(props)
     return (
         <div>
             <h2>hello</h2>
             <div>
                 {props.userPosts ? (
                     props.userPosts.map((post, i) => (
-                        <div>
-                            <h3>{post.title}</h3>
-                            <img src={post.images[0].image} alt="users post"/>
+                        <div onClick={() => props.history.push(`/post/detail/${post.id}`)} key={i} >
+                            <div>
+                                <h3>{post.id}</h3>
+                                <img src={post.images[0].image} alt="users post"/>                                
+                                </div>
                         </div>
                     ))
                 ): <div>loading</div>}

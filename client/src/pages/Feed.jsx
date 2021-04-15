@@ -16,13 +16,15 @@ const action = (dispatch) => {
 const Feed = (props) => {
     useEffect(() => {
         props.fetchAllPost()
+        // eslint-disable-next-line
     },[])
     
     return (
         <div>
             <h1>I am Feed</h1>
             <PostCard
-                mapPosts={props.postState.mapPosts.data}
+                {...props}
+                posts={props.postState.mapPosts}
             />
         </div>
     )

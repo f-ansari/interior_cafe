@@ -12,9 +12,8 @@ const action = (dispatch) => {
         destroyPost: (postId) => dispatch(DeletePost(postId))
     }
 }
-const PostDetail = (props) => {
-    // console.log(props.match.params.post_id)
-    // console.log(props)
+
+const UserPostDetail = (props) => {
 useEffect(() => {
     props.fetchOnePost(props.match.params.post_id)
 }, [])
@@ -38,6 +37,7 @@ const { onePost } = props.postState
             <button onClick={(e) => handleSubmit(e)}>Delete this post</button>
             <h2>{onePost.title}</h2>
             <h3>{convertDate(onePost.created_at)}</h3>
+            <h3>{onePost.like} 🤍</h3>
             <p>{onePost.description}</p>
 
             {onePost.images ? (onePost.images.map((images, i) => (
@@ -51,4 +51,4 @@ const { onePost } = props.postState
     )
 }
 
-export default connect(state,action)(PostDetail)
+export default connect(state,action)(UserPostDetail)

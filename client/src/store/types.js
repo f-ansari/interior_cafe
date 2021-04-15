@@ -10,6 +10,7 @@ export const PASSWORD = 'PASSWORD'
 
 // user section
 export const USER_ID = 'USER_ID'
+export const OTHER_USER = 'OTHER_USER'
 export const GET_USER_POSTS = 'GET_USER_POSTS'
 export const USER_F_NAME = 'USER_F_NAME'
 export const USER_L_NAME = 'USER_L_NAME'

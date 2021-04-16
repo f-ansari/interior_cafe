@@ -24,8 +24,10 @@ export const GET_ONE_POST = 'GET_ONE_POST'
 export const TITLE = 'TITLE'
 export const DESCRIPTION = 'DESCRIPTION'
 export const UPLOAD_IMAGES = 'UPLOAD_IMAGES'
-export const LIKE = 'LIKE'
+export const UPDATE_LIKE = 'UPDATE_LIKE'
 export const DESTROY_POST = 'DESTROY_POST'
+export const CREATE_POST = 'CREATE_POST'
+export const SET_USER_ID_FORM = 'SET_USER_ID_FORM'
 
 //image secton
 export const GET_IMAGE = 'GET_IMAGE'

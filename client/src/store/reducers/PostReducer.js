@@ -1,8 +1,9 @@
-import { GET_POST, GET_ONE_POST } from '../types'
+import { GET_POST, GET_ONE_POST, UPDATE_LIKE } from '../types'
 
 const iState = {
   mapPosts: [],
-  onePost: {}
+  onePost: {},
+  likes: 0
 }
 
 const PostReducer = (state = iState, action) => {
@@ -11,6 +12,13 @@ const PostReducer = (state = iState, action) => {
       return { ...state, mapPosts: action.payload }
     case GET_ONE_POST:
       return { ...state, onePost: action.payload }
+    case UPDATE_LIKE:
+      const idT = state.mapPosts.data.filter(
+        (post) => post.id === action.payload
+      )
+      idT[0].like += 1
+
+      return { ...state }
     default:
       return { ...state }
   }

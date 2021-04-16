@@ -1,22 +1,22 @@
-import { USER_ID, TITLE, DESCRIPTION, LIKE } from '../types'
+import { SET_USER_ID_FORM, TITLE, DESCRIPTION, CREATE_POST } from '../types'
 
 const iState = {
-  userId: '',
+  user_id: '',
   title: '',
   description: '',
-  like: ''
+  like: 0
 }
 
 const PostFormReducer = (state = iState, action) => {
   switch (action.type) {
-    case USER_ID:
-      return { ...state, userId: action.payload }
+    case SET_USER_ID_FORM:
+      return { ...state, user_id: action.payload }
     case TITLE:
       return { ...state, title: action.payload }
     case DESCRIPTION:
       return { ...state, description: action.payload }
-    case LIKE:
-      return { ...state, like: action.payload }
+    case CREATE_POST:
+      return { ...state, [action.payload.name]: action.payload.value }
     default:
       return { ...state }
   }

@@ -21,6 +21,12 @@ class PostDetails(Resource):
         post = Post.user_post_images(user_id)
         return post
 
+
+class PostOne(Resource):
+    def get(self, post_id):
+        post = Post.include_images(post_id)
+        return post
+
     def put(self, post_id):
         post = Post.find_by_id(post_id)
         data = request.get_json()
@@ -28,12 +34,6 @@ class PostDetails(Resource):
             setattr(post, key, data[key])
         db.session.commit()
         return post.json()
-
-
-class PostOne(Resource):
-    def get(self, post_id):
-        post = Post.include_images(post_id)
-        return post
 
     def delete(self, post_id):
         post = Post.find_by_id(post_id)

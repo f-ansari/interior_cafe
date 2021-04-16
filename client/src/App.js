@@ -6,6 +6,7 @@ import Nav from './components/Nav'
 import UserDash from './pages/UserDash'
 import PostDetail from './components/user_dash/UserPostDetail'
 import FeedPostDetail from './components/posts/FeedPostDetail'
+import CreatePost from './pages/CreatePost'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             path="/from/feed/post/detail/:post_id"
             component={FeedPostDetail}
           />
+          <Route path="/create/post/:user_id" component={CreatePost} />
         </Switch>
       </main>
     </div>

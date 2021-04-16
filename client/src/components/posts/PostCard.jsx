@@ -1,7 +1,7 @@
 import React from 'react'
 
 const PostCard = (props) => {
-    console.log(props)
+    // console.log(props)
     const mapPosts = props.posts.data
     return (
         <div>
@@ -9,9 +9,12 @@ const PostCard = (props) => {
             <div>
                 {mapPosts ? (
                     mapPosts.map((post, i) => (
-                        <div onClick={() => props.history.push(`/from/feed/post/detail/${post.id}`)} key={i}>
+                        <div key={i}>
                         <h3>{post.title}</h3>
-                        <img src={post.images[0].image} alt="users post"/>
+                        {/* <img src={post.images[0].image} alt="users post"/> */}
+                        {post.images.length ? <img src={post.images[0].image} alt="users post"/> : <h3>no image</h3>}
+                        <br></br>
+                        <button onClick={() => props.likePost(post.id, post.like)}>Like</button><h4>{post.like}</h4>
                         </div>
                     ))
                 ): <div>I am Loading!</div> }

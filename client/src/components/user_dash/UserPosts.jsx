@@ -10,7 +10,9 @@ const UserPost = (props) => {
                         <div onClick={() => props.history.push(`/post/detail/${post.id}`)} key={i} >
                             <div>
                                 <h3>{post.id}</h3>
-                                <img src={post.images[0].image} alt="users post"/>                                
+                                {post.images.length ? <img src={post.images[0].image} alt="users post"/>
+                                :
+                                <div>This post has no images</div>}                                
                                 </div>
                         </div>
                     ))

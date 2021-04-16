@@ -1,6 +1,6 @@
 import { __GetOneUserPosts } from '../../services/PostService'
 import { __GetOneUser } from '../../services/UserService'
-import { GET_USER_POSTS, OTHER_USER, USER_ID } from '../types'
+import { GET_USER_POSTS, OTHER_USER } from '../types'
 
 export const GetOneUserPosts = (user_id) => async (dispatch) => {
   try {

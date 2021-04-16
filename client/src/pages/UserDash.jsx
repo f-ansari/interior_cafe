@@ -17,6 +17,7 @@ const action = (dispatch) => {
 const UserDash = (props) => {
     useEffect(() => {
         props.fetchUserPost(userId)
+        // eslint-disable-next-line
     }, [])
     console.log(props)
     

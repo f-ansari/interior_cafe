@@ -9,7 +9,7 @@ class Image(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     post_id = db.Column(db.Integer, db.ForeignKey('posts.id'), nullable=False)
-    image = db.Column(db.String(255), nullable=False)
+    image = db.Column(db.String(255), default='', nullable=False)
     created_at = db.Column(
         db.DateTime, default=datetime.utcnow, nullable=False)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow(
@@ -19,7 +19,7 @@ class Image(db.Model):
     user = db.relationship(
         "User", backref=db.backref('images_user', lazy=True))
 
-    def __init__(self, user_id, post_id, image):
+    def __init__(self, user_id, post_id, image=''):
         self.user_id = user_id,
         self.post_id = post_id,
         self.image = image

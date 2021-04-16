@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { GetOnePost } from '../../store/actions/PostActions'
 import { GetOneUser } from '../../store/actions/UserAction'
@@ -20,6 +20,7 @@ const userId = props.postState.onePost.user_id
 useEffect(() => {
     props.fetchOnePost(props.match.params.post_id)
     props.fetchUser(userId)
+    // eslint-disable-next-line
 }, [userId])
 
 

@@ -1,9 +1,18 @@
 import {
   __GetAllPost,
   __GetOnePost,
-  __DeletePost
+  __DeletePost,
+  __UpdateLikes,
+  __CreatePost
 } from '../../services/PostService'
-import { GET_POST, GET_ONE_POST, DESTROY_POST } from '../types'
+import {
+  GET_POST,
+  GET_ONE_POST,
+  DESTROY_POST,
+  UPDATE_LIKE,
+  CREATE_POST,
+  SET_USER_ID_FORM
+} from '../types'
 
 export const GetAllPost = () => async (dispatch) => {
   try {
@@ -12,6 +21,20 @@ export const GetAllPost = () => async (dispatch) => {
       type: GET_POST,
       payload: posts
     })
+  } catch (error) {
+    throw error
+  }
+}
+
+export const CreateNewPost = (formName, formValue) => ({
+  type: CREATE_POST,
+  payload: { name: formName, value: formValue }
+})
+
+export const AddPost = (formData) => async (dispatch) => {
+  try {
+    const post = await __CreatePost(formData)
+    return post
   } catch (error) {
     throw error
   }
@@ -40,4 +63,24 @@ export const DeletePost = (post_id) => async (dispatch) => {
   } catch (error) {
     throw error
   }
+}
+
+export const UpdateLikes = (post_id, likes) => async (dispatch) => {
+  try {
+    const like = await __UpdateLikes(post_id, likes)
+    dispatch({
+      type: UPDATE_LIKE,
+      payload: post_id
+    })
+    return like
+  } catch (error) {
+    throw error
+  }
+}
+
+export const SetId = (user_id) => async (dispatch) => {
+  dispatch({
+    type: SET_USER_ID_FORM,
+    payload: user_id
+  })
 }

@@ -16,6 +16,7 @@ const action = (dispatch) => {
 const UserPostDetail = (props) => {
 useEffect(() => {
     props.fetchOnePost(props.match.params.post_id)
+    // eslint-disable-next-line
 }, [])
 
 const convertDate = (date) => {
@@ -29,7 +30,7 @@ const convertDate = (date) => {
   }
 
 const { onePost } = props.postState
-
+console.log(props.postState)
     return (
         <div>
             <h1>Post Detail section</h1>

@@ -11,7 +11,8 @@ import {
   DESTROY_POST,
   UPDATE_LIKE,
   CREATE_POST,
-  SET_USER_ID_FORM
+  SET_USER_ID_FORM,
+  ADD_USER_POST
 } from '../types'
 
 export const GetAllPost = () => async (dispatch) => {
@@ -34,6 +35,10 @@ export const CreateNewPost = (formName, formValue) => ({
 export const AddPost = (formData) => async (dispatch) => {
   try {
     const post = await __CreatePost(formData)
+    dispatch({
+      type: ADD_USER_POST,
+      payload: post
+    })
     return post
   } catch (error) {
     throw error

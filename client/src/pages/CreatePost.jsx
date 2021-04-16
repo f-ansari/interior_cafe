@@ -23,8 +23,8 @@ const CreatePost = (props) => {
     }
 
     const handleSubmit = () => {
-        
         props.setAddPost(props.postFormState)
+        props.history.push("/add/image")
     }
 
     useEffect(() => {
@@ -35,14 +35,7 @@ const CreatePost = (props) => {
     return (
         <div>
             <h1>Here you will create a post</h1>
-            <form>
-                {/* <input 
-                type="hidden"
-                name="userId"
-                value={props.userState.userId}
-                onChange={handleChange}
-                />
-                <br></br> */}
+            <form type="submit" onSubmit={handleSubmit}>
                 <input
                 type="text"
                 name="title"
@@ -59,7 +52,7 @@ const CreatePost = (props) => {
                 onChange={handleChange}
                 />
                 <br></br>
-                <button onClick={handleSubmit}>Creat a Post</button>
+                <button>Create a Post</button>
             </form>
         </div>
     )

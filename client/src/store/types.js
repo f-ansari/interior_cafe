@@ -15,6 +15,7 @@ export const GET_USER_POSTS = 'GET_USER_POSTS'
 export const USER_F_NAME = 'USER_F_NAME'
 export const USER_L_NAME = 'USER_L_NAME'
 export const CURR_USERNAME = 'CURR_USERNAME'
+export const ADD_USER_POST = 'ADD_USER_POST'
 
 //post section
 export const GET_POST = 'GET_POST'
@@ -31,3 +32,7 @@ export const SET_USER_ID_FORM = 'SET_USER_ID_FORM'
 
 //image secton
 export const GET_IMAGE = 'GET_IMAGE'
+
+//image form section
+export const POST_ID = 'POST_ID'
+export const USER_ID_IMAGE = 'USER_ID_IMAGE'

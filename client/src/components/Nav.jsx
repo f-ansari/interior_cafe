@@ -10,7 +10,7 @@ const Nav = () => {
                 <NavLink className="bar-2" to='/'>Home</NavLink>
                 <NavLink className="bar-2"to='/feed'>Feed</NavLink>
                 <NavLink className="bar-2"to='/userdash'>UserDash</NavLink>
-                <NavLink className="bar=2"to='/create/post/1'>Create Post</NavLink>
+                <NavLink className="bar=2"to='/create/post'>Create Post</NavLink>
             </nav>
         </div>
     )

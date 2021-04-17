@@ -30,7 +30,6 @@ const convertDate = (date) => {
   }
 
 const { onePost } = props.postState
-console.log(props.postState)
     return (
         <div>
             <h1>Post Detail section</h1>

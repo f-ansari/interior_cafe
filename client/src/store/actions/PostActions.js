@@ -12,7 +12,8 @@ import {
   UPDATE_LIKE,
   CREATE_POST,
   SET_USER_ID_FORM,
-  ADD_USER_POST
+  ADD_USER_POST,
+  INCOMING_NEW_POST
 } from '../types'
 
 export const GetAllPost = () => async (dispatch) => {
@@ -39,7 +40,11 @@ export const AddPost = (formData) => async (dispatch) => {
       type: ADD_USER_POST,
       payload: post
     })
-    return post
+    dispatch({
+      type: INCOMING_NEW_POST,
+      payload: post
+    })
+    // return post
   } catch (error) {
     throw error
   }

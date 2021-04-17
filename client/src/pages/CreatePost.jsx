@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { CreateNewPost, AddPost, SetId } from '../store/actions/PostActions'
 
 const state = ({ userState, postFormState }) => {
-    console.log( userState, postFormState )
     return{ userState, postFormState }
 }
 
@@ -16,7 +15,6 @@ const action = (dispatch) => {
 }
 
 const CreatePost = (props) => {
-    console.log(props.userState.userId)
 
     const handleChange = (e) => {
         props.createAPost(e.target.name, e.target.value)

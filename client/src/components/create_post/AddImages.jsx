@@ -19,20 +19,22 @@ const action = (dispatch) => {
     }
 }
 const AddImages = (props) => {
-    console.log(props.userState)
+    
     const latestPost = props.userState.userPosts[props.userState.userPosts.length-1]
     
     useEffect(() => {
         props.fetchUserPost(props.userState.userId)
         props.setUserId(props.userState.userId)
-        if (latestPost) setIdForPost();
-        
+        // if (latestPost) setIdForPost();
+        props.setPostId(props.userState.incomingNewPost.id)
         // eslint-disable-next-line
-    }, [])
+    }, [props.userState.incomingNewPost.id])
     
-    const setIdForPost = () => {
-         props.setPostId(latestPost.id)
-        }
+    console.log(props.userState.incomingNewPost)
+    console.log(props.userState.incomingNewPost.id)
+    // const setIdForPost = () => {
+    //      props.setPostId(props.userState.incomingNewPost.id)
+    //     }
         
     // console.log(latestPost.id)
 
@@ -50,10 +52,11 @@ const AddImages = (props) => {
         }
 
         props.setNewPostWImage(formValue)
-        console.log(props.postImageFormState)
+        props.history.push(`/userdash`)
     }
 
-    return latestPost !== undefined ? (
+    // return latestPost !== undefined ? (
+    return (
 
         <div>
             <h1>Add an Image to your post</h1>
@@ -72,13 +75,14 @@ const AddImages = (props) => {
                 <input
                     type="hidden"
                     name="post_id"
-                    value={latestPost.id}
+                    // value={latestPost.id}
                     // onChange={handleChange}   
                 />
                 <button>Submit</button>
             </form>
         </div>
-    ) : null;
+    // ) : null;
+    )
 }
 
 export default connect(state,action)(AddImages)

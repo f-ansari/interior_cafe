@@ -15,7 +15,6 @@ const action = (dispatch) => {
 }
 
 const Feed = (props) => {
-    console.log(props.postState.mapPosts.data)
     
     useEffect(() => {
         props.fetchAllPost()

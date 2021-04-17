@@ -7,7 +7,11 @@ import {
   USER_ID,
   USER_L_NAME
 } from '../types'
-import { __SetAddUser, __LoginUser } from '../../services/AuthService'
+import {
+  __SetAddUser,
+  __LoginUser,
+  __CheckSession
+} from '../../services/AuthService'
 
 export const CreateANewUser = (formName, formValue) => ({
   type: CREATE_A_USER,
@@ -51,7 +55,35 @@ export const LoginUser = (formData) => async (dispatch) => {
       type: AUTHENTICATED,
       payload: true
     })
-    console.log(logUser.payload)
+    // return logUser
+  } catch (error) {
+    throw error
+  }
+}
+
+export const CheckSession = (token) => async (dispatch) => {
+  try {
+    const session = await __CheckSession(token)
+    dispatch({
+      type: USER_ID,
+      payload: session.id
+    })
+    dispatch({
+      type: USER_F_NAME,
+      payload: session.first_name
+    })
+    dispatch({
+      type: USER_L_NAME,
+      payload: session.last_name
+    })
+    dispatch({
+      type: CURR_USERNAME,
+      payload: session.username
+    })
+    dispatch({
+      type: AUTHENTICATED,
+      payload: true
+    })
     // return logUser
   } catch (error) {
     throw error

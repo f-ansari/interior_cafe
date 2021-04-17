@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { HandleLogin, LoginUser } from '../../store/actions/AuthAction'
 
 const state = ({ userState, authState }) => {
-    console.log(userState, authState)
     return { userState, authState }
 }
 

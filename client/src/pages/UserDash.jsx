@@ -4,6 +4,7 @@ import { GetOneUserPosts } from '../store/actions/UserAction'
 import UserPosts from '../components/user_dash/UserPosts'
 
 const state = ({ userState }) => {
+    // console.log( user)
     return {userState}
 }
 
@@ -14,14 +15,12 @@ const action = (dispatch) => {
 }
 
 const UserDash = (props) => {
-    console.log(props.userState)
 
     const userId = props.userState.userId
     useEffect(() => {
         props.fetchUserPost(userId)
         // eslint-disable-next-line
-    }, [])
-    console.log(props)
+    }, [userId])
     
     return (
         <div>

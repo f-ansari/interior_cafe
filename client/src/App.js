@@ -1,5 +1,7 @@
 import './style/App.css'
 import { Switch, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { CheckSession } from './store/actions/AuthAction'
 import Home from './pages/Home'
 import Feed from './pages/Feed'
 import Nav from './components/Nav'
@@ -10,8 +12,30 @@ import CreatePost from './pages/CreatePost'
 import AddImages from './components/create_post/AddImages'
 import Register from './components/login_register/Register'
 import Login from './components/login_register/Login'
+import { useEffect } from 'react'
 
-function App() {
+const state = ({ userState }) => {
+  return { userState }
+}
+
+const action = (dispatch) => {
+  return {
+    // something
+    checkSession: (token) => dispatch(CheckSession(token))
+  }
+}
+
+function App(props) {
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    props.checkSession(token)
+  }, [
+    props.userState.userId,
+    props.userState.firstName,
+    props.userState.lastName,
+    props.userState.username
+  ])
+
   return (
     <div>
       <Nav />
@@ -35,4 +59,4 @@ function App() {
   )
 }
 
-export default App
+export default connect(state, action)(App)

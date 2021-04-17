@@ -27,6 +27,7 @@ const Login = (props) => {
             password_digest: props.authState.password_digest
         }
         props.setLoginUser(formData)
+        props.history.push('/userdash')
     }
 
     return (

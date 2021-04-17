@@ -18,6 +18,7 @@ export const CURR_USERNAME = 'CURR_USERNAME'
 export const ADD_USER_POST = 'ADD_USER_POST'
 export const AUTHENTICATED = 'AUTHENTICATED'
 export const INCOMING_NEW_POST = 'INCOMING_NEW_POST'
+export const LOGOUT = 'LOGOUT'
 
 //post section
 export const GET_POST = 'GET_POST'

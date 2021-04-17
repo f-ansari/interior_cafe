@@ -1,6 +1,6 @@
 import { __GetOneUserPosts } from '../../services/PostService'
 import { __GetOneUser } from '../../services/UserService'
-import { GET_USER_POSTS, OTHER_USER } from '../types'
+import { GET_USER_POSTS, OTHER_USER, LOGOUT } from '../types'
 
 export const GetOneUserPosts = (user_id) => async (dispatch) => {
   try {
@@ -24,4 +24,11 @@ export const GetOneUser = (user_id) => async (dispatch) => {
   } catch (error) {
     throw error
   }
+}
+
+export const SetLogout = () => async (dispatch) => {
+  dispatch({
+    type: LOGOUT,
+    payload: false
+  })
 }

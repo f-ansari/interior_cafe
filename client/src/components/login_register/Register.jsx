@@ -23,6 +23,7 @@ const Register = (props) => {
 
     const handleSubmit = () => {
         props.setAddUser(props.authState)
+        props.history.push(`/login`)
     }
 
     return (

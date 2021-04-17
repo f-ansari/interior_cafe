@@ -8,7 +8,8 @@ import {
   OTHER_USER,
   ADD_USER_POST,
   AUTHENTICATED,
-  INCOMING_NEW_POST
+  INCOMING_NEW_POST,
+  LOGOUT
 } from '../types'
 
 const iState = {
@@ -46,6 +47,16 @@ const UserReducer = (state = iState, action) => {
       }
     case INCOMING_NEW_POST:
       return { ...state, incomingNewPost: action.payload }
+    case LOGOUT:
+      return {
+        authenticated: action.payload,
+        firstName: '',
+        lastName: '',
+        username: '',
+        userPosts: [],
+        otherUserInfo: {},
+        incomingNewPost: {}
+      }
     case DESTROY_POST:
       console.log(action.payload)
       const userPosts = state.userPosts.filter(

@@ -33,7 +33,7 @@ const CreatePost = (props) => {
     return (
         <div>
             <h1>Here you will create a post</h1>
-            <form type="submit" onSubmit={handleSubmit}>
+            <form type="submit" >
                 <input
                 type="text"
                 name="title"
@@ -50,7 +50,7 @@ const CreatePost = (props) => {
                 onChange={handleChange}
                 />
                 <br></br>
-                <button>Create a Post</button>
+                <button type="button" onClick={handleSubmit}>Create a Post</button>
             </form>
         </div>
     )

@@ -4,13 +4,11 @@ import { GetOneUserPosts } from '../../store/actions/UserAction'
 import { AppendImageToPost, SetUserId, SetPostId, AddCompletePost } from '../../store/actions/ImageAction'
 
 const state = ({ userState, postImageFormState }) => {
-    // console.log(userState)
     return { userState, postImageFormState }
 }
 
 const action = (dispatch) => {
     return {
-        //something
         fetchUserPost: (userId) => dispatch(GetOneUserPosts(userId)),
         setUserId: (userId) => dispatch(SetUserId(userId)),
         setPostId: (postId) => dispatch(SetPostId(postId)),
@@ -25,18 +23,9 @@ const AddImages = (props) => {
     useEffect(() => {
         props.fetchUserPost(props.userState.userId)
         props.setUserId(props.userState.userId)
-        // if (latestPost) setIdForPost();
         props.setPostId(props.userState.incomingNewPost.id)
         // eslint-disable-next-line
     }, [props.userState.incomingNewPost.id])
-    
-    console.log(props.userState.incomingNewPost)
-    console.log(props.userState.incomingNewPost.id)
-    // const setIdForPost = () => {
-    //      props.setPostId(props.userState.incomingNewPost.id)
-    //     }
-        
-    // console.log(latestPost.id)
 
     const handleChange = (e) => {
         props.createImage(e.target.name, e.target.value)
@@ -44,7 +33,6 @@ const AddImages = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        // props.setNewPostWImage(props.postImageFormState)
         const formValue = {
             user_id: props.userState.userId,
             post_id: latestPost.id,
@@ -54,14 +42,10 @@ const AddImages = (props) => {
         props.setNewPostWImage(formValue)
         props.history.push(`/userdash`)
     }
-
-    // return latestPost !== undefined ? (
     return (
 
         <div>
             <h1>Add an Image to your post</h1>
-            {/* {latestPost ? console.log(latestPost.id) : null} */}
-            {/* value={latestPost ? latestPost.id : null} */}
 
             <form onSubmit={handleSubmit}>
                 <input
@@ -81,7 +65,6 @@ const AddImages = (props) => {
                 <button>Submit</button>
             </form>
         </div>
-    // ) : null;
     )
 }
 

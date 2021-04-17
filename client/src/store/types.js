@@ -38,6 +38,7 @@ export const GET_IMAGE = 'GET_IMAGE'
 //image form section
 export const POST_ID = 'POST_ID'
 export const USER_ID_IMAGE = 'USER_ID_IMAGE'
+export const CLEAR_IMAGE_FORM = 'CLEAR_IMAGE_FORM'
 
 //auth form section
 export const CREATE_A_USER = 'CREATE_A_USER'

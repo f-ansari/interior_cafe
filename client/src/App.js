@@ -29,6 +29,7 @@ function App(props) {
   useEffect(() => {
     const token = localStorage.getItem('token')
     props.checkSession(token)
+    // eslint-disable-next-line
   }, [
     props.userState.userId,
     props.userState.firstName,

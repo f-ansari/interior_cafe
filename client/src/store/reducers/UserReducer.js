@@ -6,7 +6,8 @@ import {
   GET_USER_POSTS,
   DESTROY_POST,
   OTHER_USER,
-  ADD_USER_POST
+  ADD_USER_POST,
+  AUTHENTICATED
 } from '../types'
 
 const iState = {
@@ -14,6 +15,7 @@ const iState = {
   firstName: 'Faryal',
   lastName: 'Ansari',
   username: 'simplyfaryal',
+  authenticated: false,
   userPosts: [],
   otherUserInfo: {}
 }
@@ -30,6 +32,8 @@ const UserReducer = (state = iState, action) => {
       return { ...state, username: action.payload }
     case GET_USER_POSTS:
       return { ...state, userPosts: action.payload }
+    case AUTHENTICATED:
+      return { ...state, authenticated: action.payload }
     case OTHER_USER:
       return { ...state, otherUserInfo: action.payload }
     case ADD_USER_POST:

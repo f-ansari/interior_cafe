@@ -8,6 +8,8 @@ import PostDetail from './components/user_dash/UserPostDetail'
 import FeedPostDetail from './components/posts/FeedPostDetail'
 import CreatePost from './pages/CreatePost'
 import AddImages from './components/create_post/AddImages'
+import Register from './components/login_register/Register'
+import Login from './components/login_register/Login'
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <main>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
           <Route path="/feed" component={Feed} />
           <Route path="/userdash" component={UserDash} />
           <Route path="/post/detail/:post_id" component={PostDetail} />

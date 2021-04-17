@@ -16,6 +16,7 @@ export const USER_F_NAME = 'USER_F_NAME'
 export const USER_L_NAME = 'USER_L_NAME'
 export const CURR_USERNAME = 'CURR_USERNAME'
 export const ADD_USER_POST = 'ADD_USER_POST'
+export const AUTHENTICATED = 'AUTHENTICATED'
 
 //post section
 export const GET_POST = 'GET_POST'
@@ -36,3 +37,7 @@ export const GET_IMAGE = 'GET_IMAGE'
 //image form section
 export const POST_ID = 'POST_ID'
 export const USER_ID_IMAGE = 'USER_ID_IMAGE'
+
+//auth form section
+export const CREATE_A_USER = 'CREATE_A_USER'
+export const HANDLE_LOGIN = 'HANDLE_LOGIN'

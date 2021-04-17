@@ -45,6 +45,7 @@ const UserReducer = (state = iState, action) => {
         userPosts: [...state.userPosts, action.payload]
       }
     case INCOMING_NEW_POST:
+      console.log(action.payload)
       return { ...state, incomingNewPost: action.payload }
     case LOGOUT:
       return {

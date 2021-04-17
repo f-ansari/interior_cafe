@@ -20,7 +20,7 @@ const UserDash = (props) => {
         props.fetchUserPost(userId)
         // eslint-disable-next-line
     }, [userId])
-    
+    // 
     return (
         <div>
             <h1>User Dash</h1>

@@ -19,7 +19,7 @@ const action = (dispatch) => {
 }
 const AddImages = (props) => {
     
-    const latestPost = props.userState.userPosts[props.userState.userPosts.length-1]
+    // const latestPost = props.userState.userPosts[props.userState.userPosts.length-1]
     
     useEffect(() => {
         props.fetchUserPost(props.userState.userId)
@@ -36,7 +36,7 @@ const AddImages = (props) => {
         e.preventDefault()
         const formValue = {
             user_id: props.userState.userId,
-            post_id: latestPost.id,
+            post_id: props.userState.incomingNewPost.id,
             image: props.postImageFormState.image
         }
         props.setNewPostWImage(formValue)

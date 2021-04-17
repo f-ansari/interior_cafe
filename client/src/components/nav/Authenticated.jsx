@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, NavLink , useHistory} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { SetLogout } from '../../store/actions/UserAction'
 
@@ -13,11 +13,10 @@ const action = (dispatch) => {
     }
 }
 const Authenticated = (props) => {
-    const history = useHistory()
+    
     const logout = () => {
         props.setLogout()
         localStorage.clear()
-        history.push('/')
     }
 
     return (
@@ -26,7 +25,7 @@ const Authenticated = (props) => {
                 <NavLink className="bar-2" to='/feed'>Feed</NavLink>
                 <NavLink className="bar-2" to='/create/post'>Create Post</NavLink>
                 <NavLink className="bar-2" to='/userdash'>UserDash</NavLink>
-                <Link onClick={logout}>Logout</Link>
+                <NavLink className="bar-2" onClick={logout} to='/'>Logout</NavLink>
             </nav>
         </div>
     )

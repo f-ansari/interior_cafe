@@ -36,8 +36,6 @@ class User(db.Model):
             "first_name": self.first_name,
             "last_name": self.last_name,
             "username": self.username,
-            "email": self.email,  # need to remove later
-            "password_digest": self.password_digest,
             "created_at": str(self.created_at),
             "updated_at": str(self.updated_at)
         }

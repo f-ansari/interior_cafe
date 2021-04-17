@@ -3,15 +3,13 @@ import { connect } from 'react-redux'
 import { CreateANewUser, SetAddUser } from '../../store/actions/AuthAction'
 
 const state = ({ authState }) => {
-    // console.log(userState, authState)
     return { authState }
 }
 
 const action = (dispatch) => {
     return {
-        //put something
-        setUser: (formName, formValue) => dispatch(CreateANewUser(formName, formValue)),
-        setAddUser: (formData) => dispatch(SetAddUser(formData))
+        setAddUser: (formData) => dispatch(SetAddUser(formData)),
+        setUser: (formName, formValue) => dispatch(CreateANewUser(formName, formValue))
     }
 }
 

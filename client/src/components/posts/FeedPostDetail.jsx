@@ -9,8 +9,8 @@ const state = ({ postState, userState }) => {
 
 const action = (dispatch) => {
     return {
-        fetchOnePost: (postId) => dispatch(GetOnePost(postId)),
-        fetchUser: (userId) => dispatch(GetOneUser(userId))
+        fetchUser: (userId) => dispatch(GetOneUser(userId)),
+        fetchOnePost: (postId) => dispatch(GetOnePost(postId))
     }
 }
 

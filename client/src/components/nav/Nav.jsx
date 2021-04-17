@@ -5,15 +5,12 @@ import { NavLink } from 'react-router-dom'
 import{ connect } from 'react-redux'
 
 const state = ({ userState }) => {
-    // console.log(userState)
     return { userState }
 }
 
-const action = (dispatch) => {
-    return {
-        //something
-    }
-}
+// const action = (dispatch) => {
+//     return {}
+// }
 
 const Nav = (props) => {
     return (
@@ -32,4 +29,4 @@ const Nav = (props) => {
     )
 }
 
-export default connect(state,action)(Nav)
+export default connect(state)(Nav)

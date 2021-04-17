@@ -43,10 +43,10 @@ class Post(db.Model):
         db.session.commit()
         return self
 
-    # @classmethod
-    # def find_all(cls):
-    #     posts = Post.query.all()
-    #     return [post.json() for post in posts]
+    @classmethod
+    def find_all_post(cls):
+        posts = Post.query.all()
+        return [post.json() for post in posts]
 
     @classmethod
     def find_all(cls):

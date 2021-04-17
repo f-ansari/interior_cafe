@@ -39,7 +39,6 @@ class Image(db.Model):
         db.session.commit()
         return self
 
-    # here for testing purposes
     @classmethod
     def find_all(cls):
         images = Image.query.all()

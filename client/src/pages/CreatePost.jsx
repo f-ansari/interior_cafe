@@ -8,9 +8,9 @@ const state = ({ userState, postFormState }) => {
 
 const action = (dispatch) => {
     return {
-        createAPost: (formName, formValue) => dispatch(CreateNewPost(formName, formValue)),
+        setUserId: (userId) => dispatch(SetId(userId)),
         setAddPost: (formData) => dispatch(AddPost(formData)),
-        setUserId: (userId) => dispatch(SetId(userId))
+        createAPost: (formName, formValue) => dispatch(CreateNewPost(formName, formValue))
     }
 }
 

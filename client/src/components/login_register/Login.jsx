@@ -8,9 +8,8 @@ const state = ({ userState, authState }) => {
 
 const action = (dispatch) => {
     return {
-        //put something
-        setUser: (formName, formValue) => dispatch(HandleLogin(formName, formValue)),
-        setLoginUser: (formData) => dispatch(LoginUser(formData))
+        setLoginUser: (formData) => dispatch(LoginUser(formData)),
+        setUser: (formName, formValue) => dispatch(HandleLogin(formName, formValue))
     }
 }
 

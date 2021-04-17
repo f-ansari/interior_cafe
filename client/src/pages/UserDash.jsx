@@ -4,8 +4,7 @@ import { GetOneUserPosts } from '../store/actions/UserAction'
 import UserPosts from '../components/user_dash/UserPosts'
 
 const state = ({ userState }) => {
-    // console.log( user)
-    return {userState}
+    return { userState }
 }
 
 const action = (dispatch) => {

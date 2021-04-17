@@ -21,7 +21,6 @@ export const __GetOneUserPosts = async (user_id) => {
 export const __CreatePost = async (formData) => {
   try {
     const res = await Client.post(`/posts`, formData)
-    console.log(res)
     return res.data
   } catch (error) {
     throw error
@@ -39,7 +38,6 @@ export const __GetOnePost = async (post_id) => {
 export const __DeletePost = async (post_id) => {
   try {
     const res = await Client.delete(`/user/post/${post_id}`)
-    console.log(res)
     return res
   } catch (error) {
     throw error

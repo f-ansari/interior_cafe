@@ -40,7 +40,6 @@ const UserReducer = (state = iState, action) => {
     case OTHER_USER:
       return { ...state, otherUserInfo: action.payload }
     case ADD_USER_POST:
-      console.log(action.payload)
       return {
         ...state,
         userPosts: [...state.userPosts, action.payload]
@@ -58,7 +57,6 @@ const UserReducer = (state = iState, action) => {
         incomingNewPost: {}
       }
     case DESTROY_POST:
-      console.log(action.payload)
       const userPosts = state.userPosts.filter(
         (destroyPost, i) => destroyPost.id !== action.payload.data.payload
       )

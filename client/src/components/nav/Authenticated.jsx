@@ -9,12 +9,10 @@ const state = ({ userState }) => {
 
 const action = (dispatch) => {
     return {
-        //something
         setLogout: () => dispatch(SetLogout())
     }
 }
 const Authenticated = (props) => {
-    console.log(props)
     const history = useHistory()
     const logout = () => {
         props.setLogout()

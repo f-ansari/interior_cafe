@@ -8,8 +8,8 @@ const state = ({ postState }) => {
 
 const action = (dispatch) => {
     return {
-        fetchOnePost: (postId) => dispatch(GetOnePost(postId)),
-        destroyPost: (postId) => dispatch(DeletePost(postId))
+        destroyPost: (postId) => dispatch(DeletePost(postId)),
+        fetchOnePost: (postId) => dispatch(GetOnePost(postId))
     }
 }
 

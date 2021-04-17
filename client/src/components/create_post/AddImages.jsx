@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { GetOneUserPosts } from '../../store/actions/UserAction'
-import { AppendImageToPost, SetUserId, SetPostId, AddCompletePost } from '../../store/actions/ImageAction'
+import { AppendImageToPost, SetUserId, SetPostId, AddCompletePost, FirstImageSubmit } from '../../store/actions/ImageAction'
 
 const state = ({ userState, postImageFormState }) => {
     return { userState, postImageFormState }
@@ -9,11 +9,12 @@ const state = ({ userState, postImageFormState }) => {
 
 const action = (dispatch) => {
     return {
-        fetchUserPost: (userId) => dispatch(GetOneUserPosts(userId)),
-        setUserId: (userId) => dispatch(SetUserId(userId)),
         setPostId: (postId) => dispatch(SetPostId(postId)),
-        createImage: (formName, formValue) => dispatch(AppendImageToPost(formName, formValue)),
-        setNewPostWImage: (formData) => dispatch(AddCompletePost(formData))
+        setUserId: (userId) => dispatch(SetUserId(userId)),
+        setFirstSubmit: () => dispatch(FirstImageSubmit()),
+        fetchUserPost: (userId) => dispatch(GetOneUserPosts(userId)),
+        setNewPostWImage: (formData) => dispatch(AddCompletePost(formData)),
+        createImage: (formName, formValue) => dispatch(AppendImageToPost(formName, formValue))
     }
 }
 const AddImages = (props) => {
@@ -38,16 +39,15 @@ const AddImages = (props) => {
             post_id: latestPost.id,
             image: props.postImageFormState.image
         }
-
         props.setNewPostWImage(formValue)
-        props.history.push(`/userdash`)
+        props.setFirstSubmit()
     }
     return (
 
         <div>
             <h1>Add an Image to your post</h1>
 
-            <form onSubmit={handleSubmit}>
+            <form>
                 <input
                     type="url"
                     name="image"
@@ -59,10 +59,18 @@ const AddImages = (props) => {
                 <input
                     type="hidden"
                     name="post_id"
-                    // value={latestPost.id}
-                    // onChange={handleChange}   
                 />
-                <button>Submit</button>
+
+                <div>
+                    {props.postImageFormState.firstSubmit ?
+                    <div>
+                        <button onClick={() => props.history.push(`/userdash`)}>Return to Dash</button>
+                        <button onClick={handleSubmit}>Add More Image</button>
+                    </div>
+                    :
+                    <button onClick={handleSubmit}>Submit</button>
+                    } 
+                </div>
             </form>
         </div>
     )

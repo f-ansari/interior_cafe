@@ -39,7 +39,6 @@ class Comment(db.Model):
         db.session.commit()
         return self
 
-    # here for testing purposes
     @classmethod
     def find_all(cls):
         comments = Comment.query.all()

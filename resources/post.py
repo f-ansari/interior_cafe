@@ -16,7 +16,6 @@ class Posts(Resource):
 
 
 class PostDetails(Resource):
-
     def get(self, user_id):
         post = Post.user_post_images(user_id)
         return post

@@ -44,7 +44,6 @@ export const AddPost = (formData) => async (dispatch) => {
       type: INCOMING_NEW_POST,
       payload: post
     })
-    // return post
   } catch (error) {
     throw error
   }
@@ -65,7 +64,6 @@ export const GetOnePost = (post_id) => async (dispatch) => {
 export const DeletePost = (post_id) => async (dispatch) => {
   try {
     const destroy = await __DeletePost(post_id)
-    console.log(destroy)
     dispatch({
       type: DESTROY_POST,
       payload: destroy

@@ -55,7 +55,6 @@ export const LoginUser = (formData) => async (dispatch) => {
       type: AUTHENTICATED,
       payload: true
     })
-    // return logUser
   } catch (error) {
     throw error
   }
@@ -84,7 +83,6 @@ export const CheckSession = (token) => async (dispatch) => {
       type: AUTHENTICATED,
       payload: true
     })
-    // return logUser
   } catch (error) {
     throw error
   }

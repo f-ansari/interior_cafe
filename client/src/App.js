@@ -1,18 +1,18 @@
 import './style/App.css'
-import { Switch, Route } from 'react-router-dom'
+import { useEffect } from 'react'
 import { connect } from 'react-redux'
+import { Switch, Route } from 'react-router-dom'
 import { CheckSession } from './store/actions/AuthAction'
 import Home from './pages/Home'
 import Feed from './pages/Feed'
 import Nav from './components/nav/Nav'
 import UserDash from './pages/UserDash'
+import CreatePost from './pages/CreatePost'
+import Login from './components/login_register/Login'
+import Register from './components/login_register/Register'
+import AddImages from './components/create_post/AddImages'
 import PostDetail from './components/user_dash/UserPostDetail'
 import FeedPostDetail from './components/posts/FeedPostDetail'
-import CreatePost from './pages/CreatePost'
-import AddImages from './components/create_post/AddImages'
-import Register from './components/login_register/Register'
-import Login from './components/login_register/Login'
-import { useEffect } from 'react'
 
 const state = ({ userState }) => {
   return { userState }
@@ -20,7 +20,6 @@ const state = ({ userState }) => {
 
 const action = (dispatch) => {
   return {
-    // something
     checkSession: (token) => dispatch(CheckSession(token))
   }
 }

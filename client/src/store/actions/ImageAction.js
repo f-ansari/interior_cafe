@@ -1,4 +1,4 @@
-import { POST_ID, UPLOAD_IMAGES, USER_ID_IMAGE } from '../types'
+import { FIRST_SUBMIT, POST_ID, UPLOAD_IMAGES, USER_ID_IMAGE } from '../types'
 import { __AddCompletePost } from '../../services/ImageService'
 
 export const AppendImageToPost = (formName, formValue) => ({
@@ -19,9 +19,15 @@ export const SetPostId = (postId) => ({
 export const AddCompletePost = (formData) => async (dispatch) => {
   try {
     const completePost = await __AddCompletePost(formData)
-    console.log(completePost)
     return completePost
   } catch (error) {
     throw error
   }
+}
+
+export const FirstImageSubmit = () => (dispatch) => {
+  dispatch({
+    type: FIRST_SUBMIT,
+    payload: true
+  })
 }

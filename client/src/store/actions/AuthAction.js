@@ -2,7 +2,7 @@ import {
   AUTHENTICATED,
   CREATE_A_USER,
   HANDLE_LOGIN,
-  USERNAME,
+  CURR_USERNAME,
   USER_F_NAME,
   USER_ID,
   USER_L_NAME
@@ -33,26 +33,26 @@ export const LoginUser = (formData) => async (dispatch) => {
     const logUser = await __LoginUser(formData)
     dispatch({
       type: USER_ID,
-      payload: logUser.id
+      payload: logUser.payload.id
     })
     dispatch({
       type: USER_F_NAME,
-      payload: logUser.first_name
+      payload: logUser.payload.first_name
     })
     dispatch({
       type: USER_L_NAME,
-      payload: logUser.last_name
+      payload: logUser.payload.last_name
     })
     dispatch({
-      type: USERNAME,
-      payload: logUser.username
+      type: CURR_USERNAME,
+      payload: logUser.payload.username
     })
     dispatch({
       type: AUTHENTICATED,
       payload: true
     })
-    console.log(logUser)
-    return logUser
+    console.log(logUser.payload)
+    // return logUser
   } catch (error) {
     throw error
   }

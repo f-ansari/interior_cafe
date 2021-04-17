@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { GetOneUserPosts } from '../store/actions/UserAction'
 import UserPosts from '../components/user_dash/UserPosts'
-const userId = 1
 
 const state = ({ userState }) => {
     return {userState}
@@ -15,6 +14,9 @@ const action = (dispatch) => {
 }
 
 const UserDash = (props) => {
+    console.log(props.userState)
+
+    const userId = props.userState.userId
     useEffect(() => {
         props.fetchUserPost(userId)
         // eslint-disable-next-line

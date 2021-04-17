@@ -15,6 +15,7 @@ const action = (dispatch) => {
 }
 
 const FeedPostDetail = (props) => {
+    
 const userId = props.postState.onePost.user_id
 
 useEffect(() => {

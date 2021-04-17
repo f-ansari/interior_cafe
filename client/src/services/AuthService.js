@@ -19,3 +19,13 @@ export const __LoginUser = async (formData) => {
     throw error
   }
 }
+
+export const __CheckSession = async (token) => {
+  try {
+    const res = await Client.get(`/auth/login`, token)
+    console.log(res)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}

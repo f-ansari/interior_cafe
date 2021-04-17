@@ -11,10 +11,10 @@ import {
 } from '../types'
 
 const iState = {
-  userId: 1,
-  firstName: 'Faryal',
-  lastName: 'Ansari',
-  username: 'simplyfaryal',
+  userId: '',
+  firstName: '',
+  lastName: '',
+  username: '',
   authenticated: false,
   userPosts: [],
   otherUserInfo: {}

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { GetOneUserPosts } from '../store/actions/UserAction'
 import UserPosts from '../components/user_dash/UserPosts'
+import '../style/UserDash.css'
 
 const state = ({ userState }) => {
     return { userState }
@@ -22,11 +23,11 @@ const UserDash = (props) => {
     }, [userId])
     // 
     return (
-        <div>
-            <h1>User Dash</h1>
+        <div className="component-container">
+            <h1 className='component-header'>User Dash</h1>
             {props.userState ?
             <div>
-                <h2>Hello {props.userState.firstName} {props.userState.lastName}</h2>
+                <h2 className='component-header'>Welcome {props.userState.firstName} {props.userState.lastName} to your Dashboard</h2>
                 <UserPosts
                 {...props}
                 userPosts={props.userState.userPosts}

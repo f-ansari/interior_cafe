@@ -1,4 +1,5 @@
 import React from 'react'
+import '../../style/Nav.css'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { SetLogout } from '../../store/actions/UserAction'
@@ -22,6 +23,7 @@ const Authenticated = (props) => {
     return (
         <div>
             <nav>
+                <NavLink className="bar-2" to='/'>Home</NavLink>
                 <NavLink className="bar-2" to='/feed'>Feed</NavLink>
                 <NavLink className="bar-2" to='/create/post'>Create Post</NavLink>
                 <NavLink className="bar-2" to='/userdash'>UserDash</NavLink>

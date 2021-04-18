@@ -27,8 +27,9 @@ const Feed = (props) => {
     }
     
     return (
-        <div>
-            <h1>I am Feed</h1>
+        <div className="component-container">
+            <h1 className='component-header'>Feed</h1>
+            <h2 className='component-header'>Deluge into Design...</h2>
             <PostCard
                 {...props}
                 posts={props.postState.mapPosts}

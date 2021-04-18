@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { GetOnePost } from '../../store/actions/PostActions'
 import { GetOneUser } from '../../store/actions/UserAction'
+import '../../style/Feed.css'
+
 
 const state = ({ postState, userState }) => {
     return { postState, userState}
@@ -36,18 +38,21 @@ const FeedPostDetail = (props) => {
             <div>
                 <h1>Feed Post Detail section</h1>
                 <button onClick={() => props.history.push(`/feed`)}>Go Back to feed</button>
-                <h2>{onePost.title}</h2>
-                <h4>{convertDate(onePost.created_at)}</h4>
-                <h3>By: @{user.username}</h3>
-                <h3>{onePost.like} 🤍</h3>
-                <p>{onePost.description}</p>
-
-                {onePost.images ? (onePost.images.map((images, i) => (
-                    <div key={i}>
-                        <img src={images.image} alt='user post details' />
-                    </div>
-                )))
-                : <div>loading...</div>}
+                <div>
+                    <h2>{onePost.title}</h2>
+                    <h4>{convertDate(onePost.created_at)}</h4>
+                    <h3>By: @{user.username}</h3>
+                    <h3>{onePost.like} 🤍</h3>
+                    <p>{onePost.description}</p>
+                </div>
+                <div className="grid-container">
+                    {onePost.images ? (onePost.images.map((images, i) => (
+                        <div className="card" key={i}>
+                            <img className="card-img" src={images.image} alt='user post details' />
+                        </div>
+                    )))
+                    : <div>loading...</div>}
+                </div>
 
             </div>
         )

@@ -1,0 +1,25 @@
+.like-section {
+  display: flex;
+  margin-left: 3;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1em 0 1em 0;
+}
+
+.like-bttn,
+.like-details {
+  margin: 0 0 0 1em;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.like-bttn {
+  height: 25px;
+  color: black;
+  background-color: white;
+  border: 1px solid #555555;
+}
+
+.like-bttn:hover {
+  color: white;
+  background-color: #ee9393;
+}

@@ -1,10 +1,10 @@
 import {
+  POST_ID,
+  RESET_IMAGE,
+  FIRST_SUBMIT,
   UPLOAD_IMAGES,
   USER_ID_IMAGE,
-  POST_ID,
-  CLEAR_IMAGE_FORM,
-  FIRST_SUBMIT,
-  RESET_IMAGE
+  CLEAR_IMAGE_FORM
 } from '../types'
 
 const iState = {

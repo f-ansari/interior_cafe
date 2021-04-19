@@ -1,11 +1,11 @@
 import {
-  FIRST_NAME,
-  LAST_NAME,
-  USERNAME,
   EMAIL,
   PASSWORD,
-  CREATE_A_USER,
-  HANDLE_LOGIN
+  USERNAME,
+  LAST_NAME,
+  FIRST_NAME,
+  HANDLE_LOGIN,
+  CREATE_A_USER
 } from '../types'
 
 const iState = {

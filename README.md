@@ -1,4 +1,4 @@
-# interior_cafe
+# InteriorCafé
 
 ### Date: April 12, 2021
 

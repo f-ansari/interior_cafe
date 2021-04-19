@@ -22,7 +22,6 @@ Interior Café is a full-stack PERN application that allows interior designers t
 
 ### ***Technologies***
 
-* PostgreSQL
 * Python
 * Flask-SQLAlchemy
 * Redux

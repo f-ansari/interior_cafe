@@ -1,4 +1,10 @@
-import { FIRST_SUBMIT, POST_ID, UPLOAD_IMAGES, USER_ID_IMAGE } from '../types'
+import {
+  FIRST_SUBMIT,
+  POST_ID,
+  UPLOAD_IMAGES,
+  USER_ID_IMAGE,
+  RESET_IMAGE
+} from '../types'
 import { __AddCompletePost } from '../../services/ImageService'
 
 export const AppendImageToPost = (formName, formValue) => ({
@@ -29,5 +35,12 @@ export const FirstImageSubmit = () => (dispatch) => {
   dispatch({
     type: FIRST_SUBMIT,
     payload: true
+  })
+}
+
+export const ResetImageForm = () => (dispatch) => {
+  dispatch({
+    type: RESET_IMAGE,
+    payload: false
   })
 }

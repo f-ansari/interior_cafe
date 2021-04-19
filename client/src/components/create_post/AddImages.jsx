@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { GetOneUserPosts } from '../../store/actions/UserAction'
-import { AppendImageToPost, SetUserId, SetPostId, AddCompletePost, FirstImageSubmit } from '../../store/actions/ImageAction'
+import { AppendImageToPost, SetUserId, SetPostId, AddCompletePost, FirstImageSubmit, ResetImageForm } from '../../store/actions/ImageAction'
 
 const state = ({ userState, postImageFormState }) => {
     return { userState, postImageFormState }
@@ -12,6 +12,7 @@ const action = (dispatch) => {
         setPostId: (postId) => dispatch(SetPostId(postId)),
         setUserId: (userId) => dispatch(SetUserId(userId)),
         setFirstSubmit: () => dispatch(FirstImageSubmit()),
+        resetForm: () => dispatch(ResetImageForm()),
         fetchUserPost: (userId) => dispatch(GetOneUserPosts(userId)),
         setNewPostWImage: (formData) => dispatch(AddCompletePost(formData)),
         createImage: (formName, formValue) => dispatch(AppendImageToPost(formName, formValue))
@@ -40,6 +41,12 @@ const AddImages = (props) => {
         props.setNewPostWImage(formValue)
         props.setFirstSubmit()
     }
+
+    const resetPostForm = () => {
+        props.history.push(`/userdash`)
+        props.resetForm()
+    }
+
     return (
         <div className="component-container create-form">
             <h1 className='component-header form-title'>Add images to your post</h1>
@@ -62,7 +69,8 @@ const AddImages = (props) => {
                 <div>
                     {props.postImageFormState.firstSubmit ?
                     <div className="images-bttn">
-                        <button className="gen-bttn create-bttn" onClick={() => props.history.push(`/userdash`)}>Return to Dash</button>
+                        {/* <button className="gen-bttn create-bttn" onClick={() => props.history.push(`/userdash`)}>Return to Dash</button> */}
+                        <button className="gen-bttn create-bttn" onClick={resetPostForm}>Return to Dash</button>
                         <button className="gen-bttn create-bttn" onClick={handleSubmit}>Add More Image</button>
                     </div>
                     :

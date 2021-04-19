@@ -3,7 +3,8 @@ import {
   USER_ID_IMAGE,
   POST_ID,
   CLEAR_IMAGE_FORM,
-  FIRST_SUBMIT
+  FIRST_SUBMIT,
+  RESET_IMAGE
 } from '../types'
 
 const iState = {
@@ -28,6 +29,14 @@ const ImagesReducer = (state = iState, action) => {
       return { ...state, image: '' }
     case FIRST_SUBMIT:
       return { ...state, firstSubmit: action.payload, image: '' }
+    case RESET_IMAGE:
+      return {
+        ...state,
+        firstSubmit: action.payload,
+        user_id: '',
+        post_id: '',
+        image: ''
+      }
     default:
       return { ...state }
   }

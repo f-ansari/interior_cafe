@@ -35,6 +35,7 @@ export const SET_USER_ID_FORM = 'SET_USER_ID_FORM'
 
 //image form section
 export const POST_ID = 'POST_ID'
+export const RESET_IMAGE = 'RESET_IMAGE'
 export const FIRST_SUBMIT = 'FIRST_SUBMIT'
 export const USER_ID_IMAGE = 'USER_ID_IMAGE'
 export const CLEAR_IMAGE_FORM = 'CLEAR_IMAGE_FORM'

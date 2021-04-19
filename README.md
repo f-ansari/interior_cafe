@@ -36,10 +36,11 @@ To get started, click [click here](https://trello.com/b/LIRIWtwm/interior-caf%C3
 
 ***
 
-### ***Planning Screenshots***
+### ***Final Product***
 
-![ERD](/assets/interior_cafe_erd.png)
-![CHD](/assets/interior_cafe_chd.png)
+![Homepage](/assets/homepage.png)
+![User Dash](/assets/userdash.png)
+![User Dash](/assets/feed.png)
 
 ***
 
@@ -53,4 +54,4 @@ To get started, click [click here](https://trello.com/b/LIRIWtwm/interior-caf%C3
 
 
 ### ***Credits***
-TBD
+  - Google Fonts

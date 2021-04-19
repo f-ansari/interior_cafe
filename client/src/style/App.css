@@ -49,12 +49,7 @@ main {
 .grid-container {
   gap: 5em 2em;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    '. . .'
-    '. . .'
-    '. . .';
 }
 
 .card {

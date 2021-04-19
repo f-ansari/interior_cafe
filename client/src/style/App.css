@@ -16,6 +16,10 @@ main {
   /* margin: 0 0 1em 0; */
 }
 
+.component-text {
+  font-family: 'Maitree', serif;
+}
+
 .component-container {
   min-width: 700px;
   max-width: 2000px;
@@ -23,7 +27,7 @@ main {
 }
 
 .grid-container {
-  gap: 2em 2em;
+  gap: 5em 2em;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
@@ -43,8 +47,19 @@ main {
 
 .card-img {
   width: 100%;
+  height: 100%;
 }
 
-/* img {
-  width: 30em;
-} */
+.gen-bttn {
+  /* background-color: white; */
+  padding: 6px;
+  color: white;
+  background-color: #686868;
+  border: 2px solid #686868;
+}
+
+.gen-bttn:hover {
+  /* background-color: white; */
+  color: black;
+  background-color: whitesmoke;
+}

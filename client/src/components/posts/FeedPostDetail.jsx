@@ -6,7 +6,7 @@ import '../../style/Feed.css'
 
 
 const state = ({ postState, userState }) => {
-    return { postState, userState}
+    return { postState, userState }
 }
 
 const action = (dispatch) => {
@@ -35,15 +35,14 @@ const FeedPostDetail = (props) => {
     const onePost = props.postState.onePost
     const user = props.userState.otherUserInfo
         return (
-            <div>
-                <h1>Feed Post Detail section</h1>
-                <button onClick={() => props.history.push(`/feed`)}>Go Back to feed</button>
+            <div className="component-container">
+                <button className="gen-bttn component-header" onClick={() => props.history.push(`/feed`)}>Go Back to feed</button>
                 <div>
-                    <h2>{onePost.title}</h2>
-                    <h4>{convertDate(onePost.created_at)}</h4>
-                    <h3>By: @{user.username}</h3>
-                    <h3>{onePost.like} 🤍</h3>
-                    <p>{onePost.description}</p>
+                    <h2 className='component-header'>Title: {onePost.title}</h2>
+                    <h4 className='component-text'>{convertDate(onePost.created_at)}</h4>
+                    <h3 className='component-text'>By: @{user.username}</h3>
+                    <h4 className='component-text'>{onePost.like} ♥️</h4>
+                    <p className='component-text'>description: {onePost.description}</p>
                 </div>
                 <div className="grid-container">
                     {onePost.images ? (onePost.images.map((images, i) => (

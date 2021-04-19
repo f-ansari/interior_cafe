@@ -31,21 +31,24 @@ const convertDate = (date) => {
 
 const { onePost } = props.postState
     return (
-        <div>
-            <h1>Post Detail section</h1>
-            <button onClick={() => props.history.push(`/userdash`)}>Go Back to Dash</button>
-            <button onClick={(e) => handleSubmit(e)}>Delete this post</button>
-            <h2>{onePost.title}</h2>
-            <h3>{convertDate(onePost.created_at)}</h3>
-            <h3>{onePost.like} 🤍</h3>
-            <p>{onePost.description}</p>
+        <div className="component-container">
+            <div className="user-detail-bttn">
+                <button className="gen-bttn component-header" onClick={() => props.history.push(`/userdash`)}>Go Back to Dash</button>
+                <button className="gen-bttn component-header" onClick={(e) => handleSubmit(e)}>Delete this post</button>
+            </div>
+            <h2 className='component-header' >Title: {onePost.title}</h2>
+            <h4 className='component-text'>{convertDate(onePost.created_at)}</h4>
+            <h4 className='component-text'>{onePost.like} ♥️</h4>
+            <p className='component-text'>description: {onePost.description}</p>
 
-            {onePost.images ? (onePost.images.map((images, i) => (
-                <div key={i}>
-                    <img src={images.image} alt='user post details' />
-                </div>
-            )))
-            : <div>loading...</div>}
+            <div className="grid-container">
+                {onePost.images ? (onePost.images.map((images, i) => (
+                    <div className="card" key={i}>
+                        <img className="card-img" src={images.image} alt='user post details' />
+                    </div>
+                )))
+                : <div>loading...</div>}
+            </div>
 
         </div>
     )

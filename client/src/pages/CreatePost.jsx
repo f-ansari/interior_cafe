@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { CreateNewPost, AddPost, SetId } from '../store/actions/PostActions'
+import '../style/CreatePost.css'
 
 const state = ({ userState, postFormState }) => {
     return{ userState, postFormState }
@@ -31,8 +32,8 @@ const CreatePost = (props) => {
       }, [])
 
     return (
-        <div>
-            <h1>Here you will create a post</h1>
+        <div className="component-container create-form">
+            <h1>Let's bring your vision to life...</h1>
             <form type="submit" >
                 <input
                 type="text"

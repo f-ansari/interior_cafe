@@ -4,6 +4,7 @@ import '../../style/Feed.css'
 const PostCard = (props) => {
     const mapPosts = props.posts.data
     // let reversed = mapPosts.reverse()
+    // console.log(reversed)
     return (
         <div>
             <div className="grid-container">

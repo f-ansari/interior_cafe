@@ -2,3 +2,10 @@
   margin: 0 0 0 1em;
   font-family: 'Quicksand', sans-serif;
 }
+
+.user-detail-bttn {
+  display: flex;
+  flex-flow: wrap;
+  margin-bottom: 2em;
+  justify-content: space-between;
+}

@@ -6,8 +6,9 @@
   display: flex;
   position: fixed;
   align-items: center;
+  /* background-color: whitesmoke; */
   background-color: whitesmoke;
-  border-bottom: rgb(179, 179, 179) 1px solid;
+  border-bottom: rgb(179, 179, 179) 1.5px solid;
 }
 
 nav a {
@@ -21,8 +22,8 @@ a:hover {
 
 .bar-1 {
   color: black;
-  margin: 0 2em 0 0;
   font-size: 250%;
+  margin: 0 2em 0 0;
   font-family: 'Cormorant Garamond', serif;
 }
 

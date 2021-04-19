@@ -9,7 +9,6 @@ const iState = {
 const PostReducer = (state = iState, action) => {
   switch (action.type) {
     case GET_POST:
-      console.log(action.payload)
       return { ...state, mapPosts: action.payload }
     case GET_ONE_POST:
       return { ...state, onePost: action.payload }

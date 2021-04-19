@@ -19,8 +19,6 @@ const action = (dispatch) => {
 }
 const AddImages = (props) => {
     
-    // const latestPost = props.userState.userPosts[props.userState.userPosts.length-1]
-    
     useEffect(() => {
         props.fetchUserPost(props.userState.userId)
         props.setUserId(props.userState.userId)

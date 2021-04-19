@@ -6,7 +6,6 @@
   display: flex;
   position: fixed;
   align-items: center;
-  /* background-color: whitesmoke; */
   background-color: whitesmoke;
   border-bottom: rgb(179, 179, 179) 1.5px solid;
 }
@@ -30,8 +29,8 @@ a:hover {
 .bar-2-container {
   width: 100%;
   display: flex;
-  font-size: x-large;
   margin: 0 2em 0 0;
+  font-size: x-large;
   justify-content: flex-end;
   font-family: 'Cormorant Garamond', serif;
 }

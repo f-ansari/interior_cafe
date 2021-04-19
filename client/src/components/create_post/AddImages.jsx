@@ -43,17 +43,17 @@ const AddImages = (props) => {
         props.setFirstSubmit()
     }
     return (
-
-        <div>
-            <h1>Add an Image to your post</h1>
+        <div className="component-container create-form">
+            <h1 className='component-header form-title'>Add images to your post</h1>
 
             <form>
                 <input
                     type="url"
                     name="image"
-                    placeholder="upload main image"
+                    placeholder="upload an image (add image url)"
                     value={props.postImageFormState.image}
                     onChange={handleChange}
+                    className="create-input"
                 />
                 <br></br>
                 <input
@@ -63,12 +63,12 @@ const AddImages = (props) => {
 
                 <div>
                     {props.postImageFormState.firstSubmit ?
-                    <div>
-                        <button onClick={() => props.history.push(`/userdash`)}>Return to Dash</button>
-                        <button onClick={handleSubmit}>Add More Image</button>
+                    <div className="images-bttn">
+                        <button className="gen-bttn create-bttn" onClick={() => props.history.push(`/userdash`)}>Return to Dash</button>
+                        <button className="gen-bttn create-bttn" onClick={handleSubmit}>Add More Image</button>
                     </div>
                     :
-                    <button onClick={handleSubmit}>Submit</button>
+                    <button className="gen-bttn create-bttn" onClick={handleSubmit}>Submit</button>
                     } 
                 </div>
             </form>

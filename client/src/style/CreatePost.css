@@ -1,13 +1,14 @@
-.create-form {
-  /* background-color: red; */
-  display: flex;
-  text-align: center;
-  align-items: center;
-  padding: 5em 0 5em 0;
-  margin: 0 15vw 0 15vw;
-  flex-direction: column;
-  justify-content: center;
-  border: 3px solid #000000;
+textarea {
+  height: 10em;
+}
 
-  /* max-width: 1500px; */
+.create-bttn {
+  padding: 20px;
+  margin: 3em 0 0 0;
+}
+
+.images-bttn {
+  gap: 1em;
+  display: flex;
+  justify-content: center;
 }

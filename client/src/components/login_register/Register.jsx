@@ -25,8 +25,8 @@ const Register = (props) => {
     }
 
     return (
-        <div>
-            <h1>Register Form</h1>
+        <div className="component-container create-form">
+            <h1  className='component-header form-title'>Register for greatness!</h1>
 
             <form type="submit" onSubmit={handleSubmit}>
                 <input
@@ -35,6 +35,7 @@ const Register = (props) => {
                 placeholder="enter first name"
                 value={props.authState.first_name}
                 onChange={handleChange}
+                className="create-input auth-input"
                 />
                 <br></br>
                 <input 
@@ -43,6 +44,7 @@ const Register = (props) => {
                 placeholder="enter last name"
                 value={props.authState.last_name}
                 onChange={handleChange}
+                className="create-input auth-input"
                 />
                 <br></br>
                 <input
@@ -51,6 +53,7 @@ const Register = (props) => {
                 placeholder="enter a username"
                 value={props.authState.username}
                 onChange={handleChange}
+                className="create-input auth-input"
                 />
                 <br></br>
                 <input 
@@ -59,6 +62,7 @@ const Register = (props) => {
                 placeholder="enter an email"
                 value={props.authState.email}
                 onChange={handleChange}
+                className="create-input auth-input"
                 />
                 <br></br>
                 <input
@@ -67,9 +71,10 @@ const Register = (props) => {
                 placeholder="enter a password"
                 value={props.authState.password_digest}
                 onChange={handleChange}
+                className="create-input auth-input"
                 />
                 <br></br>
-                <button>Register</button>
+                <button className="gen-bttn create-bttn">Register</button>
             </form>
 
         </div>

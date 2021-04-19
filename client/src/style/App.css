@@ -11,6 +11,31 @@ main {
   max-width: 1500px;
 }
 
+.create-form {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding: 2em 0 5em 0;
+  margin: 0 15vw 0 15vw;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgb(179, 179, 179);
+  background-color: rgb(250, 250, 250);
+}
+
+.form-title {
+  margin-bottom: 1em;
+}
+
+.create-input {
+  width: 30em;
+  padding-left: 10px;
+  backdrop-filter: blur(6px);
+  font-family: 'Maitree', serif;
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgb(179, 179, 179);
+}
+
 .component-header {
   font-family: 'Quicksand', sans-serif;
   /* margin: 0 0 1em 0; */
@@ -23,7 +48,7 @@ main {
 .component-container {
   min-width: 700px;
   max-width: 2000px;
-  margin: 0 5vw 0 8vw;
+  margin: 0 8vw 0 8vw;
 }
 
 .grid-container {

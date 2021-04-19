@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { HandleLogin, LoginUser } from '../../store/actions/AuthAction'
+import '../../style/Auth.css'
 
 const state = ({ userState, authState }) => {
     return { userState, authState }
@@ -30,8 +31,8 @@ const Login = (props) => {
     }
 
     return (
-        <div>
-            <h1>Login Form</h1>
+        <div className="component-container create-form">
+            <h1 className='component-header form-title'>Login to make wonders!</h1>
             
             <form type="submit" onSubmit={handleSubmit}>
                 <input 
@@ -40,6 +41,7 @@ const Login = (props) => {
                 placeholder="enter your username"
                 value={props.authState.username}
                 onChange={handleChange}
+                className="create-input auth-input"
                 />
                 <br></br>
                 <input
@@ -48,9 +50,10 @@ const Login = (props) => {
                 placeholder="enter your password"
                 value={props.authState.password_digest}
                 onChange={handleChange}
+                className="create-input auth-input"
                 />
                 <br></br>
-                <button>Login</button>
+                <button className="gen-bttn create-bttn">Login</button>
             </form>
 
         </div>

@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 from models.db import db
 from flask_cors import CORS
@@ -18,9 +19,22 @@ app = Flask(__name__)
 api = Api(app)
 cors = CORS(app)
 
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost:5432/interior_cafe_db'
-app.config['SQLALCHEMY_ECHO'] = True
+
+DATABASE_URL = os.getenv('DATABASE_URL')
+if DATABASE_URL:
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URL.replace(
+        "://", "ql://", 1)
+    app.config['SQLALCHEMY_ECHO'] = False
+    app.env = 'production
+else:
+    app.debug = True
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost:5432/interior_cafe_db'
+    app.config['SQLALCHEMY_ECHO'] = True
+# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost:5432/interior_cafe_db'
+# app.config['SQLALCHEMY_ECHO'] = True
 
 db.init_app(app)
 migrate = Migrate(app, db)
@@ -40,4 +54,4 @@ api.add_resource(Images, '/images')
 api.add_resource(Comments, '/comments')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run

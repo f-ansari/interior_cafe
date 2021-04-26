@@ -46,6 +46,8 @@ To get started, click [click here](https://trello.com/b/LIRIWtwm/interior-caf%C3
 
 ### ***Future Updates***
 
+- [ ] Forget/Update password
+- [ ] Error handling 
 - [ ] Ability to save other people work
 - [ ] Create a search bar
 - [ ] Allow users to follow each other 

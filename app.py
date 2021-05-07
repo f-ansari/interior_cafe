@@ -54,4 +54,4 @@ api.add_resource(Images, '/images')
 api.add_resource(Comments, '/comments')
 
 if __name__ == '__main__':
-    app.run
+    app.run()
